@@ -1,5 +1,5 @@
 //
-//  SnapViewController.swift
+//  PreviewViewController.swift
 //  TokenApp
 //
 //  Created by P. J. Hernandez on 4/9/19.
@@ -8,29 +8,23 @@
 
 import UIKit
 
-class SnapViewController: UIViewController {
+class PreviewViewController: UIViewController {
 
-    var takenSnap:UIImage?
-    
-    @IBOutlet weak var snapView: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let availableSnap = takenSnap {
-            snapView.image = availableSnap
-        }
-        
+
+        // Do any additional setup after loading the view.
+    }
+    @IBAction func cancelButton_TouchUpInside(_ sender: Any) {
+    }
+    @IBAction func saveButton_TouchUpInside(_ sender: Any) {
     }
     
-    @IBAction func goBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
+
     /*
     // MARK: - Navigation
 
