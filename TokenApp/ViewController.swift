@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
+    var image:UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +55,9 @@ class ViewController: UIViewController {
             // error tip: currentCamera is an optional variable - so need to unwrap it by putting '!'
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
             captureSession.addInput(captureDeviceInput)
+            photoOutput = AVCapturePhotoOutput()
             photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format:[AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
+            captureSession.addOutput(photoOutput!)
         }catch{
             print(error)
         }
@@ -71,14 +75,30 @@ class ViewController: UIViewController {
     func startRunningCaptureSession(){
         captureSession.startRunning()
     }
-    
+    // camera button tough up inside gets triggered when the camera button is tapped
     @IBAction func cameraButton_TouchUpInside(_ sender: Any) {
-        performSegue(withIdentifier: "showImage_Segue", sender: nil)
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
+        // performSegue(withIdentifier: "showImage_Segue", sender: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "showImage_Segue"{
+            let previewVC = segue.destination as! PreviewViewController
+            previewVC.image = self.image
+        }
     }
 
-
+}
+// use didFinishProcessingPhoto to get information about the processed photo
+extension ViewController: AVCapturePhotoCaptureDelegate{
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let imageData = photo.fileDataRepresentation() {
+            print(imageData)
+            image = UIImage(data: imageData)
+            // call performSegue method so that photo can be shown on Preview Layer View
+            performSegue(withIdentifier: "showImage_Segue", sender: nil)
+        }
+    }
 }
 

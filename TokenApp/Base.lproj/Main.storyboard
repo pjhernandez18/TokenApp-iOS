@@ -61,7 +61,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f5Y-0G-kgl" customClass="Preview">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f5Y-0G-kgl" customClass="Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fO4-1W-hHq">
@@ -112,6 +112,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d80-ox-Ht0"/>
                     </view>
+                    <connections>
+                        <outlet property="photo" destination="f5Y-0G-kgl" id="A1X-6E-bw2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkG-IL-NGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
