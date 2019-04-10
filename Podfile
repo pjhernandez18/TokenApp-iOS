@@ -7,8 +7,7 @@ target 'TokenApp' do
 
   # Pods for TokenApp
   pod 'Firebase/Core'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
 
 
 end

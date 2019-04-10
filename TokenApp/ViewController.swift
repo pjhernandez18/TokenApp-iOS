@@ -25,11 +25,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCaptureSession()
-        setupDevice()
-        setupInputOutput()
-        setupPreviewLayer()
-        startRunningCaptureSession()
+//        setupCaptureSession()
+//        setupDevice()
+//        setupInputOutput()
+//        setupPreviewLayer()
+//        startRunningCaptureSession()
     
     }
     

@@ -8,31 +8,48 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
+import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 	
-	var ref: DatabaseReference!
-    
+//	var ref: DatabaseReference!
+	
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 		
 		FirebaseApp.configure()
 		
-		ref = Database.database().reference()
+		let db = Firestore.firestore()
 		
-		// TODO: testing firebase database
-		let posts = ref.child("collaborations").observe(.value) { snapshot in
-			for child in snapshot.children {
-				print("a", child)
+		db.collection("collaborations").getDocuments { (snapshot, error) in
+			if let err = error {
+				print("Error getting documents: \(err)")
+			} else {
+				for document in snapshot!.documents {
+					let documentData = document.data()
+					print(document.documentID, "=>", documentData)
+					if let userRef = documentData["user"] as? DocumentReference, let tripRef = documentData["trip"] as? DocumentReference {
+						print("u", userRef)
+						print("t", tripRef)
+						userRef.getDocument(completion: { (userSnapshot, error) in
+							if let userDocument = userSnapshot?.data() {
+								print("user", userDocument)
+							}
+						})
+						tripRef.getDocument(completion: { (tripSnapshot, error) in
+							if let tripDocument = tripSnapshot?.data() {
+								print("trip", tripDocument)
+							}
+						})
+					}
+				}
 			}
 		}
 		
-		print("a", posts)
 		
         return true
     }
