@@ -25,30 +25,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		let db = Firestore.firestore()
 		
-		db.collection("collaborations").getDocuments { (snapshot, error) in
-			if let err = error {
-				print("Error getting documents: \(err)")
-			} else {
-				for document in snapshot!.documents {
-					let documentData = document.data()
-					print(document.documentID, "=>", documentData)
-					if let userRef = documentData["user"] as? DocumentReference, let tripRef = documentData["trip"] as? DocumentReference {
-						print("u", userRef)
-						print("t", tripRef)
-						userRef.getDocument(completion: { (userSnapshot, error) in
-							if let userDocument = userSnapshot?.data() {
-								print("user", userDocument)
-							}
-						})
-						tripRef.getDocument(completion: { (tripSnapshot, error) in
-							if let tripDocument = tripSnapshot?.data() {
-								print("trip", tripDocument)
-							}
-						})
-					}
+		let database = Database(db: db)
+		
+		database.trips(userId: "yenbvbWXafWnDbCDEQBW") { (trips, error) in
+			print("trips", trips)
+			if let trips = trips {
+				for trip in trips {
+					database.events(tripId: trip.id, completion: { (events, error) in
+						print("events", events)
+					})
 				}
 			}
 		}
+		
+//		db.collection("collaborations").getDocuments { (snapshot, error) in
+//			if let err = error {
+//				print("Error getting documents: \(err)")
+//			} else {
+//				for document in snapshot!.documents {
+//					let documentData = document.data()
+//					print(document.documentID, "=>", documentData)
+//					if let userRef = documentData["user"] as? DocumentReference, let tripRef = documentData["trip"] as? DocumentReference {
+//						print("u", userRef)
+//						print("t", tripRef)
+//						userRef.getDocument(completion: { (userSnapshot, error) in
+//							if let userDocument = userSnapshot?.data() {
+//								print("user", userDocument)
+//							}
+//						})
+//						tripRef.getDocument(completion: { (tripSnapshot, error) in
+//							if let tripDocument = tripSnapshot?.data() {
+//								print("trip", tripDocument)
+//							}
+//						})
+//					}
+//				}
+//			}
+//		}
 		
 		
         return true
