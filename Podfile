@@ -8,5 +8,6 @@ target 'Token' do
   # Pods for Token
 
   pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
 end
