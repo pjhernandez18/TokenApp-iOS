@@ -14,6 +14,9 @@
 		B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A34226040BC00BD42E0 /* AppDelegate.swift */; };
 		B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A35226040BC00BD42E0 /* CameraViewController.swift */; };
 		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
+		B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4F561C72260631100257491 /* GoogleService-Info.plist */; };
+		B4F561C92260641700257491 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B42B6A30226040BC00BD42E0 /* Info.plist */; };
+		B4F561CA226064D300257491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4CB977E22603F6100DC4917 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,8 @@
 		B42B6A35226040BC00BD42E0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "Token-iOS/CameraViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B42E1F2B2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		B42E1F2D2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
-		B4B9B0C922604D27000C9EA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4CB977E22603F6100DC4917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Token-iOS/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		B4F561C72260631100257491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				B42B6A34226040BC00BD42E0 /* AppDelegate.swift */,
+				B4F561C72260631100257491 /* GoogleService-Info.plist */,
 				B42B6A35226040BC00BD42E0 /* CameraViewController.swift */,
 				B42B6A30226040BC00BD42E0 /* Info.plist */,
 				B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */,
 				B42B6A31226040BC00BD42E0 /* PreviewView.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
-				B4B9B0C922604D27000C9EA6 /* GoogleService-Info.plist */,
 				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
 			);
 			path = Token;
@@ -191,7 +194,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F561CA226064D300257491 /* Assets.xcassets in Resources */,
+				B4F561C92260641700257491 /* Info.plist in Resources */,
 				B4F561C62260601300257491 /* Main.storyboard in Resources */,
+				B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

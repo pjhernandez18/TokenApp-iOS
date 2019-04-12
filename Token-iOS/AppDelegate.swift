@@ -12,7 +12,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-//    func applicationDidFinishLaunching(_ application: UIApplication) {
-//        FirebaseApp.configure()
-//    }
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        FirebaseApp.configure()
+    }
 }
