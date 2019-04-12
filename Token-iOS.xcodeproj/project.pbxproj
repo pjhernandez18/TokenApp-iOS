@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; };
-		76AC85BD218785DD00DB92D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 76AC85BC218785DD00DB92D2 /* README.md */; };
 		B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */; };
 		B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A31226040BC00BD42E0 /* PreviewView.swift */; };
 		B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */; };
 		B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A34226040BC00BD42E0 /* AppDelegate.swift */; };
 		B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A35226040BC00BD42E0 /* CameraViewController.swift */; };
-		B42E1F2E2260533D00EDE85D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2A2260533D00EDE85D /* LaunchScreen.storyboard */; };
-		B42E1F2F2260533D00EDE85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
-		B4B9B0CA22604D27000C9EA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4B9B0C922604D27000C9EA6 /* GoogleService-Info.plist */; };
-		B4CB977F22603F6100DC4917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4CB977E22603F6100DC4917 /* Assets.xcassets */; };
+		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,7 +157,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					7AA677101CFF765500B353FB = {
@@ -174,10 +170,9 @@
 			};
 			buildConfigurationList = 7AA6770C1CFF765500B353FB /* Build configuration list for PBXProject "Token-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -196,11 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76AC85BD218785DD00DB92D2 /* README.md in Resources */,
-				B42E1F2F2260533D00EDE85D /* Main.storyboard in Resources */,
-				B42E1F2E2260533D00EDE85D /* LaunchScreen.storyboard in Resources */,
-				B4CB977F22603F6100DC4917 /* Assets.xcassets in Resources */,
-				B4B9B0CA22604D27000C9EA6 /* GoogleService-Info.plist in Resources */,
+				B4F561C62260601300257491 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -353,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
