@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class TokenCameraViewController: CameraViewController {
     
@@ -17,6 +18,19 @@ class TokenCameraViewController: CameraViewController {
         _previewView = previewView
         toggleCaptureMode()
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //
+        guard Auth.auth().currentUser != nil else {
+            //grabs the current auth session and see if they're logged in
+            
+            //load login screen
+            performSegue(withIdentifier: "ToLoginScreen", sender: nil)
+            
+            return
+        }
     }
   
     @IBAction func recordButtonPressed(_ sender: Any) {

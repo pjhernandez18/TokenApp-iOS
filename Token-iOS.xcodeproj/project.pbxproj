@@ -13,10 +13,12 @@
 		B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */; };
 		B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A34226040BC00BD42E0 /* AppDelegate.swift */; };
 		B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A35226040BC00BD42E0 /* CameraViewController.swift */; };
+		B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABEF22613E7900B326B3 /* LoginViewController.swift */; };
 		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
 		B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4F561C72260631100257491 /* GoogleService-Info.plist */; };
 		B4F561C92260641700257491 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B42B6A30226040BC00BD42E0 /* Info.plist */; };
 		B4F561CA226064D300257491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4CB977E22603F6100DC4917 /* Assets.xcassets */; };
+		B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F561CD2261347400257491 /* CustomizedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,10 @@
 		B42B6A35226040BC00BD42E0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "Token-iOS/CameraViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B42E1F2B2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		B42E1F2D2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
+		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B4CB977E22603F6100DC4917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Token-iOS/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		B4F561C72260631100257491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4F561CD2261347400257491 /* CustomizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,9 @@
 				B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */,
 				B42B6A31226040BC00BD42E0 /* PreviewView.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
+				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
 				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
+				B4F561CD2261347400257491 /* CustomizedTextField.swift */,
 			);
 			path = Token;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Token/Pods-Token-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -248,6 +255,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -267,10 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
 				B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
+				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
 				B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
