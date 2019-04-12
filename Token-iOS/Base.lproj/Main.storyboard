@@ -440,6 +440,9 @@
                                         <state key="normal" title="LOG IN">
                                             <color key="titleColor" red="0.1263520296" green="0.66666668650000005" blue="0.64972974800000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="g02-2n-xWj" eventType="touchUpInside" id="Cui-NH-ITm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -449,6 +452,10 @@
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AUE-l2-noZ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="gEV-Rc-R8E" id="Th0-9S-AQz"/>
+                        <outlet property="passwordTextField" destination="ZVa-bd-4pd" id="gHW-sR-ynd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5e-4G-KQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

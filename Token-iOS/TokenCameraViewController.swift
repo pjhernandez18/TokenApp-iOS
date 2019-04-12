@@ -22,13 +22,13 @@ class TokenCameraViewController: CameraViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //
+       //  performSegue(withIdentifier: "ToLoginScreen", sender: nil)
         guard Auth.auth().currentUser != nil else {
             //grabs the current auth session and see if they're logged in
-            
-            //load login screen
-            performSegue(withIdentifier: "ToLoginScreen", sender: nil)
-            
+
+//            //load login screen
+           performSegue(withIdentifier: "ToLoginScreen", sender: nil)
+//
             return
         }
     }
