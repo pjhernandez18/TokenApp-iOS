@@ -8,7 +8,6 @@
 
 import Foundation
 import FirebaseAuth
-
 typealias Completion = (_ errorMessage: String?, _ data: AnyObject?) -> Void
 
 class AuthenticationService {
@@ -18,32 +17,27 @@ class AuthenticationService {
         return _instance
         
     }
-    
     func loginToApp(email: String, password: String, onCompletion: Completion?){
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            // we'll either get a user error or an error, so we need to handle what happens in each state
-            
-            
+            //guard let strongSelf = self else { return }
+             // we'll either get a user error or an error, so we need to handle what happens in each state
             //handle errors here
+          //  let user = Auth.auth().currentUser
             if error != nil {
-                
                 if let error = AuthErrorCode(rawValue: error!._code){
-                    
+
                     if error == .userNotFound {
-                        
                         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                            
                             if error != nil {
                                 //handle errors here
                                 self.handleFBErrors(error: error! as NSError, onComplete: onCompletion)
                             }else {
-                                
-                                if user == nil {
-                                    
+                                if user != nil {
+                                    print("Here")
+                                    DatabaseService.instance.saveUser(uid: "12345") 
                                     //Sign in
                                     Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-                                        
                                         if error != nil {
                                             self.handleFBErrors(error: error! as NSError, onComplete: onCompletion)
                                         } else{
@@ -58,14 +52,11 @@ class AuthenticationService {
                 } else{
                     //handle error
                     self.handleFBErrors(error: error! as NSError, onComplete: onCompletion)
-
                 }
             } else {
-                
                 // successful login
                 onCompletion?(nil, user)
             }
-            
         })
     }
     
@@ -74,7 +65,6 @@ class AuthenticationService {
         print(error.debugDescription)
         
         if let error = AuthErrorCode(rawValue: error._code){
-            
             switch error {
             case .invalidEmail:
                 onComplete?("Invalid Email Address", nil)
@@ -91,8 +81,6 @@ class AuthenticationService {
             default:
                 onComplete?("Unknown Error Please Try Again", nil)
                 break
-
-                
             }
         }
     }

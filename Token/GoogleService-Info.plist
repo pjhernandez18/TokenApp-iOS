@@ -19,18 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>token-7acc3.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:982242081626:ios:9e1310aff26380bf</string>
 	<key>DATABASE_URL</key>
-	<string>https://token-7acc3.firebaseio.com</string>
+	<string>https://token-7acc3.firebaseio.com/</string>
 </dict>
 </plist>
