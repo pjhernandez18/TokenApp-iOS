@@ -22,10 +22,14 @@ class DatabaseService {
     var ref: DatabaseReference {
         return Database.database().reference()
     }
+    // add another reference for users
+    var usersRef: DatabaseReference{
+        return ref.child("users")
+    }
     
     func saveUser(uid: String){
         // create profile object
-        let profile: Dictionary<String, AnyObject> = ["firstName": "PJ" as AnyObject, "lastName": "Hernandez" as AnyObject]
+        let profile: Dictionary<String, AnyObject> = ["firstName": "Jerry" as AnyObject, "lastName": "Zhao" as AnyObject]
         ref.child("users").child(uid).child("profile").setValue(profile)
     }
     
