@@ -129,22 +129,6 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
                     }
                 }
             }
-//            let _ = ref.putFile(from: url, metadata: nil, completion: {(meta: StorageMetadata?, err: Error?) in
-//                if err != nil {
-//                    print("error uploading video")
-//                } else {
-//                    let downloadURL = ref.downloadURL{ url, error in
-//                        if let error = error {
-//                            print(error)
-//                        }else {
-//
-//                        }
-//                    }
-//                    print(downloadURL)
-//                    self.dismiss(animated: true, completion: nil)
-//                }
-//            })
-
         }
     }
     

@@ -37,15 +37,15 @@
 		B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = "Token-iOS/PhotoCaptureDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B42B6A30226040BC00BD42E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Token-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
 		B42B6A31226040BC00BD42E0 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = "Token-iOS/PreviewView.swift"; sourceTree = SOURCE_ROOT; };
-		B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenCameraViewController.swift; path = "Token-iOS/TokenCameraViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenCameraViewController.swift; path = "Token/View Controllers/TokenCameraViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B42B6A34226040BC00BD42E0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Token-iOS/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		B42B6A35226040BC00BD42E0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "Token-iOS/CameraViewController.swift"; sourceTree = SOURCE_ROOT; };
+		B42B6A35226040BC00BD42E0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "Token/View Controllers/CameraViewController.swift"; sourceTree = SOURCE_ROOT; };
 		B42E1F2B2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		B42E1F2D2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		B453506422629D6F00AC23AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
-		B47FABF32262739000B326B3 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = ../Services/AuthenticationService.swift; sourceTree = "<group>"; };
+		B47FABF32262739000B326B3 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Services/DatabaseService.swift; sourceTree = "<group>"; };
 		B47FABF52262961800B326B3 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		B47FABF72262971100B326B3 /* CustomizedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedUserCell.swift; sourceTree = "<group>"; };
 		B4CB977E22603F6100DC4917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Token-iOS/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -126,19 +126,14 @@
 			children = (
 				B42B6A30226040BC00BD42E0 /* Info.plist */,
 				B4F561C72260631100257491 /* GoogleService-Info.plist */,
-				B47FABF52262961800B326B3 /* UsersViewController.swift */,
+				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
+				B4EAE979226519FD00874980 /* View Controllers */,
+				B4EAE97A22651A5A00874980 /* Services */,
+				B4EAE97B22651AA100874980 /* Customized Fields */,
 				B42B6A34226040BC00BD42E0 /* AppDelegate.swift */,
-				B42B6A35226040BC00BD42E0 /* CameraViewController.swift */,
+				B4EAE97D22651B2C00874980 /* Token Objects */,
 				B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */,
 				B42B6A31226040BC00BD42E0 /* PreviewView.swift */,
-				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
-				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
-				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
-				B4F561CD2261347400257491 /* CustomizedTextField.swift */,
-				B47FABF122614A6F00B326B3 /* AuthenticationService.swift */,
-				B47FABF32262739000B326B3 /* DatabaseService.swift */,
-				B47FABF72262971100B326B3 /* CustomizedUserCell.swift */,
-				B453506422629D6F00AC23AD /* User.swift */,
 			);
 			path = Token;
 			sourceTree = "<group>";
@@ -150,6 +145,43 @@
 				B42E1F2C2260533D00EDE85D /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B4EAE979226519FD00874980 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B42B6A35226040BC00BD42E0 /* CameraViewController.swift */,
+				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
+				B47FABF52262961800B326B3 /* UsersViewController.swift */,
+				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B4EAE97A22651A5A00874980 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B47FABF122614A6F00B326B3 /* AuthenticationService.swift */,
+				B47FABF32262739000B326B3 /* DatabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B4EAE97B22651AA100874980 /* Customized Fields */ = {
+			isa = PBXGroup;
+			children = (
+				B4F561CD2261347400257491 /* CustomizedTextField.swift */,
+				B47FABF72262971100B326B3 /* CustomizedUserCell.swift */,
+			);
+			path = "Customized Fields";
+			sourceTree = "<group>";
+		};
+		B4EAE97D22651B2C00874980 /* Token Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B453506422629D6F00AC23AD /* User.swift */,
+			);
+			path = "Token Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
