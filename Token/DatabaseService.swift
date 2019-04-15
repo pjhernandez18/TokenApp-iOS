@@ -27,6 +27,17 @@ class DatabaseService {
         return ref.child("users")
     }
     
+    var storageRef: StorageReference{
+        
+        //copy the URL from Firebase Storage section. Yours is unique
+        return Storage.storage().reference(forURL:"gs://token-7acc3.appspot.com/")
+    }
+    
+    var videoStorageRef: StorageReference{
+        
+        return storageRef.child("videos")
+    }
+    
     func saveUser(uid: String){
         // create profile object
         let profile: Dictionary<String, AnyObject> = ["firstName": "Jerry" as AnyObject, "lastName": "Zhao" as AnyObject]

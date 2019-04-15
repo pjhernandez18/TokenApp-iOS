@@ -9,9 +9,14 @@ import UIKit
 import AVFoundation
 import Photos
 
+protocol UploadRecordingDelegate: class {
+    // what we created earlier
+    func recordingComplete(_ videoURL: URL!)
+}
+
 class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     // MARK: View Controller Life Cycle
-    
+    weak var delegate: UploadRecordingDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -805,26 +810,28 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         }
         
         if success {
+            self.delegate?.recordingComplete(outputFileURL)
+            
             // Check authorization status.
-            PHPhotoLibrary.requestAuthorization { status in
-                if status == .authorized {
-                    // Save the movie file to the photo library and cleanup.
-                    PHPhotoLibrary.shared().performChanges({
-                        let options = PHAssetResourceCreationOptions()
-                        options.shouldMoveFile = true
-                        let creationRequest = PHAssetCreationRequest.forAsset()
-                        creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
-                    }, completionHandler: { success, error in
-                        if !success {
-                            print("AVCam couldn't save the movie to your photo library: \(String(describing: error))")
-                        }
-                        cleanup()
-                    }
-                    )
-                } else {
-                    cleanup()
-                }
-            }
+//            PHPhotoLibrary.requestAuthorization { status in
+//                if status == .authorized {
+//                    // Save the movie file to the photo library and cleanup.
+//                    PHPhotoLibrary.shared().performChanges({
+//                        let options = PHAssetResourceCreationOptions()
+//                        options.shouldMoveFile = true
+//                        let creationRequest = PHAssetCreationRequest.forAsset()
+//                        creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
+//                    }, completionHandler: { success, error in
+//                        if !success {
+//                            print("AVCam couldn't save the movie to your photo library: \(String(describing: error))")
+//                        }
+//                        cleanup()
+//                    }
+//                    )
+//                } else {
+//                    cleanup()
+//                }
+//            }
         } else {
             cleanup()
         }

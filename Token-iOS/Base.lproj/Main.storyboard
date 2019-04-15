@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yPB-KM-7nL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YuE-zn-TSa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -364,6 +364,7 @@
                     <connections>
                         <outlet property="previewView" destination="LHC-qw-cLp" id="KTz-LU-Oac"/>
                         <segue destination="g02-2n-xWj" kind="presentation" identifier="ToLoginScreen" id="YMc-6c-TYS"/>
+                        <segue destination="yPB-KM-7nL" kind="presentation" identifier="UsersVC" id="W2u-iu-KVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agy-d9-ff5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,6 +498,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvO-43-pHl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="User List" id="ukY-i9-Fxt">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="sendSnapButton" id="jcE-e2-e8V">
+                                            <color key="tintColor" red="0.1263520296" green="0.66666668650000005" blue="0.64972974800000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="sendSnapButtonPressed:" destination="yPB-KM-7nL" id="CVS-2U-Ii9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="upC-pT-JKe"/>
@@ -507,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VzM-4G-U6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1280.8" y="110.19490254872565"/>
+            <point key="canvasLocation" x="982" y="233"/>
         </scene>
     </scenes>
     <resources>
@@ -522,6 +537,7 @@
         <image name="PortraitMatteON" width="150" height="150"/>
         <image name="cameraIcon" width="30" height="30"/>
         <image name="createSnapButton" width="30" height="30"/>
+        <image name="sendSnapButton" width="23" height="23"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
