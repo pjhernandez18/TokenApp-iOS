@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
+
 
 class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -115,18 +117,18 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
                 } else{
                     print(error?.localizedDescription)
                 }
-//                guard let metadata = metadata else {
-//                    // Uh-oh, an error occurred!
-//                    print("error 1 occured")
-//                    return
-//                }
-                // You can also access to download URL after upload.
-                DatabaseService.instance.videoStorageRef.downloadURL { (url, error) in
-                    guard url != nil else {
+                
+                ref.downloadURL { (url, error) in
+                    guard let downloadURL = url else {
                         // Uh-oh, an error occurred!
                         print("error 2 occured")
                         return
                     }
+
+                    // send request to user selected
+                    // "where it says user-123" is supposed to be Auth.auth().currentUser?
+                    DatabaseService.instance.sendRequest(senderUID: "user-123", sendingTo: self.selectedUsers, mediaURL: downloadURL, text: "Hello, here is a video")
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }

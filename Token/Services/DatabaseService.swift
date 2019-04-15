@@ -44,5 +44,16 @@ class DatabaseService {
         ref.child("users").child(uid).child("profile").setValue(profile)
     }
     
+    func sendRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaURL: URL, text: String? = nil){
+        
+        var uids = [String]()
+        
+        for uid in sendingTo.keys{
+            uids.append(uid)
+            let request: Dictionary<String, AnyObject> = ["mediaURL": mediaURL.absoluteString as AnyObject, "userID":senderUID as AnyObject, "openCount":0 as AnyObject, "userReceieved":uids as AnyObject]
+            ref.child("requests").childByAutoId().setValue(request)
+        }
+    }
+    
 }
   
