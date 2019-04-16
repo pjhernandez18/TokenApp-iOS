@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         FirebaseApp.configure()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        let layout = UICollectionViewFlowLayout()
-        window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//        
+//        let layout = UICollectionViewFlowLayout()
+//        window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
        
         // let db = Firestore.firestore()
     }

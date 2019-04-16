@@ -14,11 +14,20 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        leftSwipe.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(leftSwipe)
+        
         navigationItem.title = "Feed"
         collectionView?.backgroundColor = UIColor.white
-    
         collectionView?.register(TripCell.self, forCellWithReuseIdentifier: "cellId")
      }
+    
+    @objc func swipeAction(swipe:UISwipeGestureRecognizer)
+    {
+        performSegue(withIdentifier: "goRight", sender: self)
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
@@ -31,7 +40,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width , height: 200)
+        let height = (view.frame.width - 16 - 16) * 9 / 16
+        return CGSize(width: view.frame.width , height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -50,13 +60,20 @@ class TripCell: UICollectionViewCell {
     let feedtripImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.gray
-        imageView.image = UIImage(named: "UNADJUSTEDNONRAW_thumb_76e")
+        imageView.image = UIImage(named: "barca_bunkers_view")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     let userProfileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.green
+        imageView.backgroundColor = UIColor.white
+        imageView.image = UIImage(named: "pj")
+        imageView.layer.cornerRadius = 22
+        imageView.layer.masksToBounds = true
+        // imageView.layer.
+
         return imageView
     }()
     
@@ -68,15 +85,17 @@ class TripCell: UICollectionViewCell {
     
     let tripLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.red
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Spring Break - BARCELONA BABY"
         return label
     }()
     
     let tripDates: UITextView = {
         let textview = UITextView()
-        textview.backgroundColor = UIColor.blue
-        textview .translatesAutoresizingMaskIntoConstraints = false
+        textview.translatesAutoresizingMaskIntoConstraints = false
+        textview.text = "March 10 - March 17"
+        textview.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
+        textview.textColor = UIColor.lightGray
 
         return textview
     }()
@@ -117,7 +136,6 @@ class TripCell: UICollectionViewCell {
         
  
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

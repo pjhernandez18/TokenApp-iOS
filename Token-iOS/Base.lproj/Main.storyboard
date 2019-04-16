@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YuE-zn-TSa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -317,6 +317,43 @@
             </objects>
             <point key="canvasLocation" x="-656" y="-630"/>
         </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="qLu-vC-D9s">
+            <objects>
+                <collectionViewController id="Cov-4R-B2Q" customClass="FeedViewController" customModule="Token" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gFb-0y-htI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Liv-Wm-Z57">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0bg-KI-ByU">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Cov-4R-B2Q" id="YxR-To-omW"/>
+                            <outlet property="delegate" destination="Cov-4R-B2Q" id="Uh1-SD-tbV"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="YuE-zn-TSa" kind="presentation" identifier="goRight" modalTransitionStyle="crossDissolve" id="Wpb-0U-14Y"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXA-TZ-AwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550" y="339"/>
+        </scene>
         <!--Token Camera View Controller-->
         <scene sceneID="AbO-bm-1pZ">
             <objects>
@@ -334,6 +371,15 @@
                                         <state key="normal" image="downloadSnapButton"/>
                                         <connections>
                                             <action selector="downloadSnap:" destination="YuE-zn-TSa" eventType="touchUpInside" id="fDG-0B-Gjb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDS-KH-Xn7">
+                                        <rect key="frame" x="3" y="585" width="76" height="72"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                        <state key="normal" image="Feed Icon-2"/>
+                                        <connections>
+                                            <segue destination="Cov-4R-B2Q" kind="presentation" identifier="toFeedViewController" modalTransitionStyle="crossDissolve" id="MRJ-cy-a9U"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -375,6 +421,7 @@
                         <outlet property="previewView" destination="LHC-qw-cLp" id="KTz-LU-Oac"/>
                         <segue destination="g02-2n-xWj" kind="presentation" identifier="ToLoginScreen" id="YMc-6c-TYS"/>
                         <segue destination="yPB-KM-7nL" kind="presentation" identifier="UsersVC" id="W2u-iu-KVa"/>
+                        <segue destination="Cov-4R-B2Q" kind="presentation" identifier="goLeft" modalTransitionStyle="crossDissolve" id="7U1-XP-0G3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agy-d9-ff5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,6 +586,7 @@
         <image name="CapturePhoto" width="150" height="150"/>
         <image name="CaptureVideo" width="150" height="150"/>
         <image name="DepthON" width="150" height="150"/>
+        <image name="Feed Icon-2" width="1201" height="1200"/>
         <image name="FlipCamera" width="150" height="150"/>
         <image name="LOGO ALL TEAL" width="5629" height="1766"/>
         <image name="LivePhotoON" width="150" height="150"/>
@@ -550,5 +598,8 @@
         <image name="downloadSnapButton" width="23" height="23"/>
         <image name="sendSnapButton" width="23" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7U1-XP-0G3"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

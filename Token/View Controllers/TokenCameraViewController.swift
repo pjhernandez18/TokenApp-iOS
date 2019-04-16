@@ -25,6 +25,10 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
         _previewView = previewView
         toggleCaptureMode()
         super.viewDidLoad()
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(rightSwipe)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +41,12 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
             return
         }
     }
+    
+    @objc func swipeAction(swipe:UISwipeGestureRecognizer)
+    {
+        performSegue(withIdentifier: "goLeft", sender: self)
+    }
+    
   
     @IBAction func recordButtonPressed(_ sender: Any) {
         print("record button pressed")
@@ -48,6 +58,10 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
         changeCamera()
     }
     
+    @IBAction func feedViewPressed(_ sender: Any) {
+        print("feed view button pressed")
+        performSegue(withIdentifier: "toFeedViewController", sender: nil)
+    }
     @IBAction func downloadSnap(_ sender: Any) {
         
         print("downloading snap")
