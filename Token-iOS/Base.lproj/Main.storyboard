@@ -327,6 +327,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHC-qw-cLp" userLabel="PreviewView" customClass="PreviewView" customModule="Token" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPu-Iq-PDP">
+                                        <rect key="frame" x="36" y="43" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="downloadSnapButton"/>
+                                        <connections>
+                                            <action selector="downloadSnap:" destination="YuE-zn-TSa" eventType="touchUpInside" id="fDG-0B-Gjb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWB-2a-q3k">
@@ -537,6 +547,7 @@
         <image name="PortraitMatteON" width="150" height="150"/>
         <image name="cameraIcon" width="30" height="30"/>
         <image name="createSnapButton" width="30" height="30"/>
+        <image name="downloadSnapButton" width="23" height="23"/>
         <image name="sendSnapButton" width="23" height="23"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
