@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; };
+		B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */; };
 		B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */; };
 		B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A31226040BC00BD42E0 /* PreviewView.swift */; };
 		B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */; };
@@ -19,6 +20,9 @@
 		B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF32262739000B326B3 /* DatabaseService.swift */; };
 		B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF52262961800B326B3 /* UsersViewController.swift */; };
 		B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF72262971100B326B3 /* CustomizedUserCell.swift */; };
+		B4DD8FC122662E06001269DA /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC022662E06001269DA /* FeedViewController.swift */; };
+		B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */; };
+		B4DD8FC52266403A001269DA /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DD8FC42266403A001269DA /* Feed.storyboard */; };
 		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
 		B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4F561C72260631100257491 /* GoogleService-Info.plist */; };
 		B4F561C92260641700257491 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B42B6A30226040BC00BD42E0 /* Info.plist */; };
@@ -34,6 +38,7 @@
 		7AA677111CFF765600B353FB /* Token.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Token.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE305C0B008EE39D6642D3F9 /* Pods-Token.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.debug.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE2E03196DB7E7C9A3AA632 /* Pods-Token.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.release.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.release.xcconfig"; sourceTree = "<group>"; };
+		B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaTrips.xcassets; sourceTree = "<group>"; };
 		B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = "Token-iOS/PhotoCaptureDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B42B6A30226040BC00BD42E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Token-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
 		B42B6A31226040BC00BD42E0 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = "Token-iOS/PreviewView.swift"; sourceTree = SOURCE_ROOT; };
@@ -49,6 +54,9 @@
 		B47FABF52262961800B326B3 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		B47FABF72262971100B326B3 /* CustomizedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedUserCell.swift; sourceTree = "<group>"; };
 		B4CB977E22603F6100DC4917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Token-iOS/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		B4DD8FC022662E06001269DA /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTripsViewController.swift; sourceTree = "<group>"; };
+		B4DD8FC42266403A001269DA /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		B4F561C72260631100257491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4F561CD2261347400257491 /* CustomizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +135,7 @@
 				B42B6A30226040BC00BD42E0 /* Info.plist */,
 				B4F561C72260631100257491 /* GoogleService-Info.plist */,
 				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
+				B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */,
 				B4EAE979226519FD00874980 /* View Controllers */,
 				B4EAE97A22651A5A00874980 /* Services */,
 				B4EAE97B22651AA100874980 /* Customized Fields */,
@@ -143,6 +152,7 @@
 			children = (
 				B42E1F2A2260533D00EDE85D /* LaunchScreen.storyboard */,
 				B42E1F2C2260533D00EDE85D /* Main.storyboard */,
+				B4DD8FC42266403A001269DA /* Feed.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -154,6 +164,8 @@
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
 				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
+				B4DD8FC022662E06001269DA /* FeedViewController.swift */,
+				B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -247,8 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DD8FC52266403A001269DA /* Feed.storyboard in Resources */,
 				B4F561CA226064D300257491 /* Assets.xcassets in Resources */,
 				B4F561C92260641700257491 /* Info.plist in Resources */,
+				B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */,
 				B4F561C62260601300257491 /* Main.storyboard in Resources */,
 				B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */,
 			);
@@ -323,8 +337,10 @@
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
 				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
 				B453506522629D6F00AC23AD /* User.swift in Sources */,
+				B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */,
 				B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */,
 				B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */,
+				B4DD8FC122662E06001269DA /* FeedViewController.swift in Sources */,
 				B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

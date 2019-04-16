@@ -12,9 +12,16 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
+   
     func applicationDidFinishLaunching(_ application: UIApplication) {
         FirebaseApp.configure()
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let layout = UICollectionViewFlowLayout()
+        window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
+       
         // let db = Firestore.firestore()
     }
 }

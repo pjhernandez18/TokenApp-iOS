@@ -11,6 +11,7 @@ import UIKit
 struct User {
     
     private var _firstName: String
+  //  private var _lastName: String
     private var _uid: String
     
     var uid: String {
@@ -21,9 +22,14 @@ struct User {
         return _firstName
     }
     
-    init(uid: String, firstName: String){
+//    var lastName: String {
+//        return _lastName
+//    }
+    
+    init(uid: String, firstName: String) { //lastName: String){
         _uid = uid
         _firstName = firstName
+       // _lastName = lastName
     }
 }
 
