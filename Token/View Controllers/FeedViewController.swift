@@ -22,6 +22,8 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         navigationItem.title = "Feed"
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(TripCell.self, forCellWithReuseIdentifier: "cellId")
+        
+        
      }
     
     @objc func swipeAction(swipe:UISwipeGestureRecognizer)
@@ -41,7 +43,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (view.frame.width - 16 - 16) * 9 / 16
-        return CGSize(width: view.frame.width , height: height)
+        return CGSize(width: view.frame.width , height: height + 16 + 68)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -79,7 +81,7 @@ class TripCell: UICollectionViewCell {
     
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         return view
     }()
     

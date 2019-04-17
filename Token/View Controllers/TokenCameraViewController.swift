@@ -26,9 +26,13 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
         toggleCaptureMode()
         super.viewDidLoad()
         
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeActionRight(swipe:)))
         rightSwipe.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(rightSwipe)
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeActionLeft(swipe:)))
+        leftSwipe.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(leftSwipe)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,9 +46,14 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
         }
     }
     
-    @objc func swipeAction(swipe:UISwipeGestureRecognizer)
+    @objc func swipeActionRight(swipe:UISwipeGestureRecognizer)
     {
         performSegue(withIdentifier: "goLeft", sender: self)
+    }
+    @objc func swipeActionLeft(swipe:UISwipeGestureRecognizer)
+    {
+        
+        performSegue(withIdentifier: "goRight", sender: self)
     }
     
   
