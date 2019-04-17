@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; };
+		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A69D2266B49500C39444 /* ProfileViewController.swift */; };
+		B418A6A22267893C00C39444 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B418A6A12267893C00C39444 /* Start.storyboard */; };
+		B418A6A42267935200C39444 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A32267935200C39444 /* StartViewController.swift */; };
+		B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A82267AA5800C39444 /* WelcomeView.swift */; };
+		B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */; };
 		B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */; };
 		B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */; };
 		B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A31226040BC00BD42E0 /* PreviewView.swift */; };
@@ -25,7 +29,6 @@
 		B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */; };
 		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
 		B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4F561C72260631100257491 /* GoogleService-Info.plist */; };
-		B4F561C92260641700257491 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B42B6A30226040BC00BD42E0 /* Info.plist */; };
 		B4F561CA226064D300257491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4CB977E22603F6100DC4917 /* Assets.xcassets */; };
 		B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F561CD2261347400257491 /* CustomizedTextField.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +42,11 @@
 		AE305C0B008EE39D6642D3F9 /* Pods-Token.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.debug.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE2E03196DB7E7C9A3AA632 /* Pods-Token.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.release.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.release.xcconfig"; sourceTree = "<group>"; };
 		B418A69D2266B49500C39444 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B418A6A12267893C00C39444 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		B418A6A32267935200C39444 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		B418A6A72267A8E700C39444 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainApp.storyboard; path = "/Users/pjhernandez/Desktop/Token-iOS/Storyboards/MainApp.storyboard"; sourceTree = "<absolute>"; };
+		B418A6A82267AA5800C39444 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaTrips.xcassets; sourceTree = "<group>"; };
 		B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = "Token-iOS/PhotoCaptureDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B42B6A30226040BC00BD42E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Token-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -150,8 +158,10 @@
 		B42E1F30226054CB00EDE85D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B418A6A72267A8E700C39444 /* MainApp.storyboard */,
 				B42E1F2A2260533D00EDE85D /* LaunchScreen.storyboard */,
 				B42E1F2C2260533D00EDE85D /* Main.storyboard */,
+				B418A6A12267893C00C39444 /* Start.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -166,6 +176,9 @@
 				B4DD8FC022662E06001269DA /* FeedViewController.swift */,
 				B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */,
 				B418A69D2266B49500C39444 /* ProfileViewController.swift */,
+				B418A6A32267935200C39444 /* StartViewController.swift */,
+				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
+				B418A6A82267AA5800C39444 /* WelcomeView.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -260,10 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4F561CA226064D300257491 /* Assets.xcassets in Resources */,
-				B4F561C92260641700257491 /* Info.plist in Resources */,
 				B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */,
 				B4F561C62260601300257491 /* Main.storyboard in Resources */,
 				B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */,
+				B418A6A22267893C00C39444 /* Start.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,19 +314,23 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Token/Pods-Token-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -328,9 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
+				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
 				B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */,
 				B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */,
+				B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
@@ -342,6 +361,7 @@
 				B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */,
 				B4DD8FC122662E06001269DA /* FeedViewController.swift in Sources */,
 				B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */,
+				B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

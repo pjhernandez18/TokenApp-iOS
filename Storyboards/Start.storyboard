@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rMk-m0-F8U">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="r13-GP-J7b">
+            <objects>
+                <viewController id="rMk-m0-F8U" customClass="StartViewController" customModule="Token" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mVk-JL-jXu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpm-13-WGR" customClass="WelcomeView" customModule="Token" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lpm-13-WGR" firstAttribute="leading" secondItem="VBT-EW-7N7" secondAttribute="leading" id="4K0-wQ-Bxn"/>
+                            <constraint firstItem="lpm-13-WGR" firstAttribute="bottom" secondItem="VBT-EW-7N7" secondAttribute="bottom" id="C81-6Y-Rls"/>
+                            <constraint firstItem="lpm-13-WGR" firstAttribute="trailing" secondItem="VBT-EW-7N7" secondAttribute="trailing" id="LeQ-Az-N34"/>
+                            <constraint firstItem="lpm-13-WGR" firstAttribute="top" secondItem="mVk-JL-jXu" secondAttribute="top" id="gMg-Me-cKN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VBT-EW-7N7"/>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeView" destination="lpm-13-WGR" id="kdR-d2-bPx"/>
+                        <segue destination="apr-dy-AOC" kind="presentation" identifier="tocreateTrip" modalTransitionStyle="crossDissolve" id="Oda-V2-lmA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKD-dW-blv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="134.5108695652174"/>
+        </scene>
+        <!--Create Trip View Controller-->
+        <scene sceneID="0sN-1V-fUf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJt-fs-pkL" userLabel="First Responder" colorLabel="IBBuiltInLabel-Yellow" sceneMemberID="firstResponder"/>
+                <viewController id="apr-dy-AOC" customClass="CreateTripViewController" customModule="Token" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mA9-Fa-rqt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDA-lx-QRe">
+                                <rect key="frame" x="21" y="32" width="46" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backtoWelcome:" destination="apr-dy-AOC" eventType="touchUpInside" id="Ofj-d0-C3H"/>
+                                    <segue destination="rMk-m0-F8U" kind="presentation" identifier="backtoWelcome" id="2CK-rq-gIO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NLx-Hx-4Nd"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="941" y="133"/>
+        </scene>
+        <!--mainApp-->
+        <scene sceneID="pEh-ri-oOJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mainApp" id="wMo-bQ-DbC" userLabel="mainApp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daV-7n-Mtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="116"/>
+        </scene>
+    </scenes>
+</document>

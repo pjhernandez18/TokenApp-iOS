@@ -44,4 +44,11 @@ class LoginViewController: UIViewController {
         
         super.viewDidLoad()
     }
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        
+//        textField.resignFirstResponder()
+//        //or
+//        //self.view.endEditing(true)
+//        return true
+//    }
 }
