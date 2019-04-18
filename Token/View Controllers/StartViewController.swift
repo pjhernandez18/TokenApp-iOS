@@ -44,7 +44,7 @@ extension StartViewController: PaperOnboardingDataSource {
         let titleFont = UIFont(name: "AvenirNext-Regular", size: 18)!
         let descFont = UIFont(name: "AvenirNext-Regular", size: 15)!
         
-        return OnboardingItemInfo(informationImage: UIImage(named: "Welcome-Token-Logo")!, title: "A Place For Your Memories", description: "Tap to Begin", pageIcon: UIImage(named: "Jar")!, color: backgroundColor, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descFont, descriptionLabelPadding: CGFloat(integerLiteral: 0),titleLabelPadding: CGFloat(integerLiteral: 0))
+        return OnboardingItemInfo(informationImage: UIImage(named: "Asset 4@4x")!, title: "A Place For Your Memories", description: "", pageIcon: UIImage(named: "Jar")!, color: backgroundColor, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descFont, descriptionLabelPadding: CGFloat(integerLiteral: 0),titleLabelPadding: CGFloat(integerLiteral: 0))
  
     }
     

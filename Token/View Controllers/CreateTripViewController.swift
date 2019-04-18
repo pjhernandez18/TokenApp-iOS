@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 
 class CreateTripViewController: UIViewController {
@@ -24,10 +25,11 @@ class CreateTripViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
+        view.isUserInteractionEnabled = true
         return view
     }()
     
-    let createTripButton: UIButton = {
+    lazy var createTripButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor.white
         button.setTitle("Create a Trip", for: .normal)
@@ -35,6 +37,8 @@ class CreateTripViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
+        
+        button.addTarget(self, action: #selector(handleTrip), for: .touchUpInside)
         return button
     }()
     
@@ -42,6 +46,7 @@ class CreateTripViewController: UIViewController {
         let tf = UITextField()
         tf.placeholder =  "Trip Name"
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.isUserInteractionEnabled = true
         return tf
     }()
     
@@ -112,6 +117,16 @@ class CreateTripViewController: UIViewController {
         setupCreateTripButton()
         setupLogoView()
       
+    }
+    
+    @objc func handleTrip() {
+        guard let tripName = tripName.text, let tripDateFrom = tripDateFrom.text, let tripDateTo = tripDateTo.text else {
+                print("Form not valid")
+                return
+        }
+        // Put trip on database
+        DatabaseService.instance.saveTrip(name: tripName, startDate: tripDateFrom, endDate: tripDateTo)
+        print("trip added")
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {

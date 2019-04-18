@@ -23,7 +23,6 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(TripCell.self, forCellWithReuseIdentifier: "cellId")
         
-        
      }
     
     @objc func swipeAction(swipe:UISwipeGestureRecognizer)

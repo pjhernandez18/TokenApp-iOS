@@ -44,6 +44,7 @@ class DatabaseService {
         ref.child("users").child(uid).child("profile").setValue(profile)
     }
     
+    // A request is a token. this function sends tokens to selected users
     func sendRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaURL: URL, text: String? = nil){
         
         var uids = [String]()
@@ -53,6 +54,12 @@ class DatabaseService {
             let request: Dictionary<String, AnyObject> = ["mediaURL": mediaURL.absoluteString as AnyObject, "userID":senderUID as AnyObject, "openCount":0 as AnyObject, "userReceieved":uids as AnyObject]
             ref.child("requests").childByAutoId().setValue(request)
         }
+    }
+    //
+    func saveTrip(name: String, startDate: String, endDate: String){
+        // need to generate a unique trip id
+        let trip: Dictionary<String, AnyObject> = ["tripName": name as AnyObject, "startDate": startDate as AnyObject, "endDate": endDate as AnyObject]
+        ref.child("trips").child("123").child("tripDetails").setValue(trip)
     }
     
 }
