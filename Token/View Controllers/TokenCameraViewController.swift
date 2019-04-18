@@ -26,6 +26,7 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
         toggleCaptureMode()
         super.viewDidLoad()
         
+        // Swipe gestures for navigation. Right swipe to go to feed, left swipe to go to trip jar
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeActionRight(swipe:)))
         rightSwipe.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(rightSwipe)

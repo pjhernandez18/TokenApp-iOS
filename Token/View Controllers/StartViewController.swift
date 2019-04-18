@@ -37,6 +37,8 @@ extension StartViewController: PaperOnboardingDataSource {
         return 1
     }
     
+    
+    
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
         let backgroundColor = UIColor.init(displayP3Red: 15/255, green: 170/255, blue: 190/255, alpha: 1)
         let titleFont = UIFont(name: "AvenirNext-Regular", size: 18)!
@@ -45,5 +47,6 @@ extension StartViewController: PaperOnboardingDataSource {
         return OnboardingItemInfo(informationImage: UIImage(named: "Welcome-Token-Logo")!, title: "A Place For Your Memories", description: "Tap to Begin", pageIcon: UIImage(named: "Jar")!, color: backgroundColor, titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descFont, descriptionLabelPadding: CGFloat(integerLiteral: 0),titleLabelPadding: CGFloat(integerLiteral: 0))
  
     }
+    
 }
  

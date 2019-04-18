@@ -80,6 +80,14 @@ class CreateTripViewController: UIViewController {
         return view
     }()
     
+    let tokenLogo: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "Logo2")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(r: 15, g: 170, b: 190)
@@ -99,8 +107,10 @@ class CreateTripViewController: UIViewController {
         
         view.addSubview(inputsContainerView)
         view.addSubview(createTripButton)
+        view.addSubview(tokenLogo)
         setupInputsContainer()
         setupCreateTripButton()
+        setupLogoView()
       
     }
     
@@ -122,6 +132,13 @@ class CreateTripViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func setupLogoView() {
+        tokenLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        tokenLogo.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: 15).isActive = true
+        tokenLogo.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        tokenLogo.heightAnchor.constraint(equalToConstant: 250).isActive = true
+    }
+
     func setupInputsContainer() {
         inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
