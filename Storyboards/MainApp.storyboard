@@ -139,13 +139,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Rzp-47-Pup" secondAttribute="trailing" constant="4" id="zzx-oX-PG7"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWB-2a-q3k">
-                                <rect key="frame" x="172.66666666666666" y="626" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWB-2a-q3k">
+                                <rect key="frame" x="157" y="606" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Tv3-ii-Fiv"/>
-                                    <constraint firstAttribute="height" constant="80" id="sOk-Hw-0Vm"/>
+                                    <constraint firstAttribute="width" constant="100" id="Tv3-ii-Fiv"/>
+                                    <constraint firstAttribute="height" constant="100" id="sOk-Hw-0Vm"/>
                                 </constraints>
-                                <state key="normal" image="createSnapButton">
+                                <state key="normal" backgroundImage="createSnapButton">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -155,15 +155,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZWB-2a-q3k" secondAttribute="trailing" constant="141.33000000000001" id="0fH-5P-tHy"/>
                             <constraint firstItem="LHC-qw-cLp" firstAttribute="leading" secondItem="WL9-sV-gSV" secondAttribute="leading" id="38a-Tl-tXO"/>
-                            <constraint firstItem="WL9-sV-gSV" firstAttribute="bottom" secondItem="ZWB-2a-q3k" secondAttribute="bottom" constant="30" id="58v-8J-iiE"/>
-                            <constraint firstItem="WL9-sV-gSV" firstAttribute="trailing" secondItem="ZWB-2a-q3k" secondAttribute="trailing" constant="172.5" id="L4D-UM-WJU"/>
                             <constraint firstItem="ZWB-2a-q3k" firstAttribute="centerX" secondItem="UO1-I0-qq7" secondAttribute="centerX" id="QPp-QX-u6e"/>
-                            <constraint firstItem="ZWB-2a-q3k" firstAttribute="leading" secondItem="UO1-I0-qq7" secondAttribute="leadingMargin" constant="152.66999999999999" id="aca-zv-zYn"/>
                             <constraint firstItem="LHC-qw-cLp" firstAttribute="trailing" secondItem="WL9-sV-gSV" secondAttribute="trailing" id="fcD-WQ-bD8"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ZWB-2a-q3k" secondAttribute="bottom" constant="30" id="l0p-Di-iqL"/>
-                            <constraint firstItem="ZWB-2a-q3k" firstAttribute="leading" secondItem="WL9-sV-gSV" secondAttribute="leading" constant="172.5" id="mfy-CT-3Pj"/>
                             <constraint firstItem="LHC-qw-cLp" firstAttribute="top" secondItem="UO1-I0-qq7" secondAttribute="top" id="p8U-Oh-Alw"/>
                             <constraint firstItem="LHC-qw-cLp" firstAttribute="bottom" secondItem="WL9-sV-gSV" secondAttribute="bottom" id="wYW-Js-skG"/>
                         </constraints>
