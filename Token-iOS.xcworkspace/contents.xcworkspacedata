@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/pjhernandez/Desktop/Token-iOS/Storyboards/MainApp.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Token-iOS.xcodeproj">
    </FileRef>
    <FileRef
