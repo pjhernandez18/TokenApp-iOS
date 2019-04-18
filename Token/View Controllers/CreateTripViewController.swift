@@ -11,6 +11,9 @@ import UIKit
 
 class CreateTripViewController: UIViewController {
     
+    private var dateFromPicker: UIDatePicker?
+    private var dateToPicker: UIDatePicker?
+    
     @IBAction func backtoWelcome(_ sender: Any) {
         performSegue(withIdentifier: "backtoWelcome", sender: self)
     }
@@ -77,23 +80,48 @@ class CreateTripViewController: UIViewController {
         return view
     }()
     
-    
-    
-    
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.init(r: 15, g: 170, b: 190)
         
+        dateFromPicker = UIDatePicker()
+        dateFromPicker?.datePickerMode = .date
+        dateFromPicker?.addTarget(self, action: #selector(CreateTripViewController.dateFromChanged(dateFromPicker:)), for: .valueChanged)
+        tripDateFrom.inputView = dateFromPicker
+
+        dateToPicker = UIDatePicker()
+        dateToPicker?.datePickerMode = .date
+        dateToPicker?.addTarget(self, action: #selector(CreateTripViewController.dateToChanged(dateToPicker:)), for: .valueChanged)
+        tripDateTo.inputView = dateToPicker
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateTripViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        
         view.addSubview(inputsContainerView)
         view.addSubview(createTripButton)
-        
         setupInputsContainer()
         setupCreateTripButton()
       
     }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dateFromChanged(dateFromPicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        tripDateFrom.text = dateFormatter.string(from: dateFromPicker.date)
+        view.endEditing(true)
+    }
+    
+    @objc func dateToChanged(dateToPicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        tripDateTo.text = dateFormatter.string(from: dateToPicker.date)
+        view.endEditing(true)
+    }
+    
     func setupInputsContainer() {
         inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -149,8 +177,6 @@ class CreateTripViewController: UIViewController {
         createTripButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         createTripButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-
-
 
 }
 extension UIColor {
