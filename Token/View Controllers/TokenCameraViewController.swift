@@ -12,8 +12,9 @@ import FirebaseStorage
 import AVFoundation
 import AVKit
 
+// View controller for the main in-app camera
+
 class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
-    
     
     var avPlayer: AVPlayer?
     var avPlayerController = AVPlayerViewController()
@@ -101,7 +102,6 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
     
     func playVideo(url: NSURL){
         
-        //let fileURL = NSURL(string: "http://www.ebookfrenzy.com/ios_book/movie.mov")!
         avPlayer = AVPlayer(url: url as URL)
         
         self.avPlayerController.player = avPlayer
@@ -121,8 +121,10 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
         NotificationCenter.default.removeObserver(self)
         
     }
+    // function to download video from Firebase storage
     
     func downloadVideo() {
+        // random video file
         let videoName = "videos/EE360C3E-D1A3-484B-9624-D85AC70CA044file:/private/var/mobile/Containers/Data/Application/1DFC767B-84C0-4BD2-ADC5-CFC5F7E01825/tmp/42DD8DFC-EFE4-4E00-9358-F4549DF3FBB7.mov"
         let videoURL = DatabaseService.instance.storageRef.child(videoName)
         
@@ -146,10 +148,9 @@ class TokenCameraViewController: CameraViewController, UploadRecordingDelegate {
                             return
                         }
                         print(downloadUrl)
-                        
                         if downloadUrl != nil {
                             print("download url had been obtained and set")
-                            self.playVideo(url: downloadUrl as! NSURL)
+                            self.playVideo(url: downloadUrl as NSURL)
                         }
                     }
             }

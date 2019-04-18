@@ -127,6 +127,8 @@ class CreateTripViewController: UIViewController {
         // Put trip on database
         DatabaseService.instance.saveTrip(name: tripName, startDate: tripDateFrom, endDate: tripDateTo)
         print("trip added")
+        // segue to main app
+        performSegue(withIdentifier: "toMainApp", sender: self)
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {

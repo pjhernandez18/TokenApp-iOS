@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// messing around with customized table view cells
 class CustomizedUserCell: UITableViewCell {
     
    

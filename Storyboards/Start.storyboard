@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="apr-dy-AOC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rMk-m0-F8U">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,6 +64,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NLx-Hx-4Nd"/>
                     </view>
+                    <connections>
+                        <segue destination="wMo-bQ-DbC" kind="presentation" identifier="toMainApp" modalTransitionStyle="crossDissolve" id="uBc-BB-pr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJt-fs-pkL" userLabel="First Responder" colorLabel="IBBuiltInLabel-Yellow" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,7 +75,7 @@
         <!--mainApp-->
         <scene sceneID="pEh-ri-oOJ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="mainApp" id="wMo-bQ-DbC" userLabel="mainApp" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="mainApp" storyboardName="MainApp" id="wMo-bQ-DbC" userLabel="mainApp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daV-7n-Mtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1609" y="116"/>

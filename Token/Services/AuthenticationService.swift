@@ -18,12 +18,9 @@ class AuthenticationService {
         
     }
     func loginToApp(email: String, password: String, onCompletion: Completion?){
-        
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            //guard let strongSelf = self else { return }
              // we'll either get a user error or an error, so we need to handle what happens in each state
             //handle errors here
-          //  let user = Auth.auth().currentUser
             if error != nil {
                 if let error = AuthErrorCode(rawValue: error!._code){
                     if error == .userNotFound {

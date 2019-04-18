@@ -19,25 +19,27 @@ class DatabaseService {
         return _instance
     }
     
+    // reference to real-time database
     var ref: DatabaseReference {
         return Database.database().reference()
     }
-    // add another reference for users
+    
+    //reference to users in real-time database
     var usersRef: DatabaseReference{
         return ref.child("users")
     }
-    
+    // provide a reference to Firebase Storage
     var storageRef: StorageReference{
         
         //copy the URL from Firebase Storage section. Yours is unique
         return Storage.storage().reference(forURL:"gs://token-7acc3.appspot.com/")
     }
-    
+    // provide a reference to Firebase storage for videos taken on the in-app camera
     var videoStorageRef: StorageReference{
         
         return storageRef.child("videos")
     }
-    
+    // save users on to the real-time database
     func saveUser(uid: String){
         // create profile object
         let profile: Dictionary<String, AnyObject> = ["firstName": "Jerry" as AnyObject, "lastName": "Zhao" as AnyObject]
@@ -55,7 +57,8 @@ class DatabaseService {
             ref.child("requests").childByAutoId().setValue(request)
         }
     }
-    //
+    
+    // save trip details on to the real-time database
     func saveTrip(name: String, startDate: String, endDate: String){
         // need to generate a unique trip id
         let trip: Dictionary<String, AnyObject> = ["tripName": name as AnyObject, "startDate": startDate as AnyObject, "endDate": endDate as AnyObject]

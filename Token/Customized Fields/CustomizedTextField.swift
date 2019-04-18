@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// messing around with customized text fields
 
 @IBDesignable
 class CustomizedTextField: UITextField {
