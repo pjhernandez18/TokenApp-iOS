@@ -11,7 +11,6 @@ target 'Token' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'Eureka'
   pod 'paper-onboarding'
 
 end

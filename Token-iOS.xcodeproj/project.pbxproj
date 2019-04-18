@@ -13,6 +13,7 @@
 		B418A6A42267935200C39444 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A32267935200C39444 /* StartViewController.swift */; };
 		B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A82267AA5800C39444 /* WelcomeView.swift */; };
 		B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */; };
+		B418A6AC226927B400C39444 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B418A6A72267A8E700C39444 /* MainApp.storyboard */; };
 		B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */; };
 		B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */; };
 		B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A31226040BC00BD42E0 /* PreviewView.swift */; };
@@ -277,6 +278,7 @@
 				B4F561C62260601300257491 /* Main.storyboard in Resources */,
 				B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */,
 				B418A6A22267893C00C39444 /* Start.storyboard in Resources */,
+				B418A6AC226927B400C39444 /* MainApp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +316,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Token/Pods-Token-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -325,7 +326,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
