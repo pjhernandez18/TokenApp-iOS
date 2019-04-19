@@ -21,7 +21,6 @@ class CreateTripViewController: UIViewController {
     
     let inputsContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
@@ -44,7 +43,11 @@ class CreateTripViewController: UIViewController {
     
     let tripName: UITextField = {
         let tf = UITextField()
-        tf.placeholder =  "Trip Name"
+        tf.attributedPlaceholder = NSAttributedString(string: "Trip Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.8)])
+		tf.textAlignment = .center
+		tf.backgroundColor = .clear
+		tf.font = UIFont.boldSystemFont(ofSize: 24)
+		tf.textColor = .white
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.isUserInteractionEnabled = true
         return tf
@@ -60,6 +63,7 @@ class CreateTripViewController: UIViewController {
     let tripDateFrom: UITextField = {
         let df = UITextField()
         df.placeholder =  "From"
+		df.textColor = .white
         df.translatesAutoresizingMaskIntoConstraints = false
         return df
     }()
@@ -74,15 +78,9 @@ class CreateTripViewController: UIViewController {
     let tripDateTo: UITextField = {
         let df = UITextField()
         df.placeholder =  "To"
+		df.textColor = .white
         df.translatesAutoresizingMaskIntoConstraints = false
         return df
-    }()
-    
-    let dateSeparator2: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(r: 220, g: 220, b: 220)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }()
     
     let tokenLogo: UIImageView = {
@@ -166,10 +164,9 @@ class CreateTripViewController: UIViewController {
         inputsContainerView.addSubview(tripDateFrom)
         inputsContainerView.addSubview(dateSeparator1)
         inputsContainerView.addSubview(tripDateTo)
-        inputsContainerView.addSubview(dateSeparator2)
-        
+		
         //need constraints for the text field
-        tripName.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
+        tripName.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
         tripName.topAnchor.constraint(equalTo: inputsContainerView.topAnchor).isActive = true
         tripName.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         tripName.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3).isActive = true
@@ -181,9 +178,9 @@ class CreateTripViewController: UIViewController {
         lineSeparator.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
         //need constraints for the text field
-        tripDateFrom.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
+        tripDateFrom.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
+		tripDateFrom.rightAnchor.constraint(equalTo: inputsContainerView.centerXAnchor).isActive = true
         tripDateFrom.topAnchor.constraint(equalTo: tripName.bottomAnchor).isActive = true
-        tripDateFrom.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         tripDateFrom.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3).isActive = true
         
         //need constraints for line separator
@@ -193,17 +190,11 @@ class CreateTripViewController: UIViewController {
         dateSeparator1.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
         //need constraints for the text field
-        tripDateTo.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
-        tripDateTo.topAnchor.constraint(equalTo: tripDateFrom.bottomAnchor).isActive = true
-        tripDateTo.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+        tripDateTo.leftAnchor.constraint(equalTo: tripDateFrom.rightAnchor).isActive = true
+		tripDateTo.rightAnchor.constraint(equalTo: inputsContainerView.rightAnchor).isActive = true
+        tripDateTo.topAnchor.constraint(equalTo: tripName.bottomAnchor).isActive = true
         tripDateTo.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3).isActive = true
-        
-        //need constraints for line separator
-        dateSeparator2.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
-        dateSeparator2.topAnchor.constraint(equalTo: tripDateTo.bottomAnchor).isActive = true
-        dateSeparator2.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        dateSeparator2.heightAnchor.constraint(equalToConstant: 1).isActive = true
-    }
+	}
     
     func setupCreateTripButton() {
         createTripButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
