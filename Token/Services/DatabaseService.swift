@@ -65,5 +65,7 @@ class DatabaseService {
         ref.child("trips").child("123").child("tripDetails").setValue(trip)
     }
     
+    
+    
 }
   

@@ -14,6 +14,7 @@
 		B418A6A42267935200C39444 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A32267935200C39444 /* StartViewController.swift */; };
 		B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A82267AA5800C39444 /* WelcomeView.swift */; };
 		B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */; };
+		B418A6B0226B138100C39444 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AF226B138100C39444 /* PreviewViewController.swift */; };
 		B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */; };
 		B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */; };
 		B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A31226040BC00BD42E0 /* PreviewView.swift */; };
@@ -48,6 +49,7 @@
 		B418A6A32267935200C39444 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B418A6A82267AA5800C39444 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
+		B418A6AF226B138100C39444 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaTrips.xcassets; sourceTree = "<group>"; };
 		B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = "Token-iOS/PhotoCaptureDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B42B6A30226040BC00BD42E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Token-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -172,6 +174,7 @@
 			children = (
 				B42B6A35226040BC00BD42E0 /* CameraViewController.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
+				B418A6AF226B138100C39444 /* PreviewViewController.swift */,
 				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
 				B4DD8FC022662E06001269DA /* FeedViewController.swift */,
@@ -244,6 +247,7 @@
 				TargetAttributes = {
 					7AA677101CFF765500B353FB = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8MA8343UA7;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -353,6 +357,7 @@
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
 				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
+				B418A6B0226B138100C39444 /* PreviewViewController.swift in Sources */,
 				B453506522629D6F00AC23AD /* User.swift in Sources */,
 				B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */,
 				B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */,
@@ -504,9 +509,10 @@
 			baseConfigurationReference = AE305C0B008EE39D6642D3F9 /* Pods-Token.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8MA8343UA7;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -525,9 +531,10 @@
 			baseConfigurationReference = AEE2E03196DB7E7C9A3AA632 /* Pods-Token.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8MA8343UA7;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
