@@ -31,16 +31,21 @@ class SwiftyRecordButton: SwiftyCamButton {
 		drawButton()
 	}
 	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		circleBorder.bounds = self.bounds
+		circleBorder.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+		circleBorder.cornerRadius = self.frame.size.width / 2
+	}
+	
 	private func drawButton() {
 		self.backgroundColor = UIColor.clear
 		
 		circleBorder = CALayer()
 		circleBorder.backgroundColor = UIColor.clear.cgColor
-		circleBorder.borderWidth = 6.0
-		circleBorder.borderColor = UIColor.white.cgColor
-		circleBorder.bounds = self.bounds
-		circleBorder.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
-		circleBorder.cornerRadius = self.frame.size.width / 2
+		circleBorder.borderWidth = 8.0
+		circleBorder.borderColor = UIColor.tokenYellow.cgColor
 		layer.insertSublayer(circleBorder, at: 0)
 		
 	}

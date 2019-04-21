@@ -10,12 +10,14 @@
 		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */; };
 		96A1F3CF22692F46006F463E /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F3CE22692F46006F463E /* MainApp.storyboard */; };
+		96E40E1A226D251700706919 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E40E19226D251700706919 /* Constants.swift */; };
+		96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */; };
 		B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A69D2266B49500C39444 /* ProfileViewController.swift */; };
 		B418A6A22267893C00C39444 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B418A6A12267893C00C39444 /* Start.storyboard */; };
 		B418A6A42267935200C39444 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A32267935200C39444 /* StartViewController.swift */; };
 		B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A82267AA5800C39444 /* WelcomeView.swift */; };
 		B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */; };
-		B418A6B0226B138100C39444 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AF226B138100C39444 /* PreviewViewController.swift */; };
+		B418A6B0226B138100C39444 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */; };
 		B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */; };
 		B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */; };
 		B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A31226040BC00BD42E0 /* PreviewView.swift */; };
@@ -47,6 +49,8 @@
 		7AA677111CFF765600B353FB /* Token.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Token.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
 		96A1F3CE22692F46006F463E /* MainApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
+		96E40E19226D251700706919 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVideoViewController.swift; sourceTree = "<group>"; };
 		AE305C0B008EE39D6642D3F9 /* Pods-Token.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.debug.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE2E03196DB7E7C9A3AA632 /* Pods-Token.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.release.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.release.xcconfig"; sourceTree = "<group>"; };
 		B418A69D2266B49500C39444 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		B418A6A32267935200C39444 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B418A6A82267AA5800C39444 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
-		B418A6AF226B138100C39444 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
 		B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaTrips.xcassets; sourceTree = "<group>"; };
 		B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = "Token-iOS/PhotoCaptureDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		B42B6A30226040BC00BD42E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Token-iOS/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -200,7 +204,8 @@
 			children = (
 				B42B6A35226040BC00BD42E0 /* CameraViewController.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
-				B418A6AF226B138100C39444 /* PreviewViewController.swift */,
+				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
+				96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */,
 				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
 				B4DD8FC022662E06001269DA /* FeedViewController.swift */,
@@ -211,6 +216,8 @@
 				B418A6A82267AA5800C39444 /* WelcomeView.swift */,
 				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
 				B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */,
+				96E40E19226D251700706919 /* Constants.swift */,
+
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -388,11 +395,13 @@
 				B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */,
 				B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
+				96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
 				B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
 				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
-				B418A6B0226B138100C39444 /* PreviewViewController.swift in Sources */,
+				96E40E1A226D251700706919 /* Constants.swift in Sources */,
+				B418A6B0226B138100C39444 /* PreviewPhotoViewController.swift in Sources */,
 				B453506522629D6F00AC23AD /* User.swift in Sources */,
 				B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */,
 				B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */,
