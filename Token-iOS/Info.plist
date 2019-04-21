@@ -37,18 +37,16 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
-	<key>NSMainStoryboardFile</key>
-	<string>Camera</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Token uses the camera to take photos and video.</string>
+	<key>NSMainStoryboardFile</key>
+	<string>Camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Token uses the microphone to record sound during Live Photos and movies.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Token saves captured photos and videos to your photo library.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Start</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

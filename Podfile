@@ -13,5 +13,5 @@ target 'Token' do
   pod 'Firebase/Database'
   pod 'paper-onboarding'
   pod 'SwiftyCam'
-
+  pod 'LBTAComponents'
 end

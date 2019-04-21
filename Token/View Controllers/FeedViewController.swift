@@ -21,6 +21,7 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         navigationItem.title = "Feed"
         collectionView?.backgroundColor = UIColor.white
+        // register cell class
         collectionView?.register(TripCell.self, forCellWithReuseIdentifier: "cellId")
         
      }
@@ -29,11 +30,11 @@ class FeedViewController: UICollectionViewController, UICollectionViewDelegateFl
     {
         performSegue(withIdentifier: "goRight", sender: self)
     }
-    
+    // returns the number of cells in the view controller
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-
+    // dequeue a cell with a unique identifier
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
         

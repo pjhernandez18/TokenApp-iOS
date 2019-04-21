@@ -23,6 +23,9 @@
 		B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A34226040BC00BD42E0 /* AppDelegate.swift */; };
 		B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A35226040BC00BD42E0 /* CameraViewController.swift */; };
 		B453506522629D6F00AC23AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B453506422629D6F00AC23AD /* User.swift */; };
+		B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */; };
+		B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6520226D2F6600B1ABAA /* Cells.swift */; };
+		B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */; };
 		B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABEF22613E7900B326B3 /* LoginViewController.swift */; };
 		B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF122614A6F00B326B3 /* AuthenticationService.swift */; };
 		B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF32262739000B326B3 /* DatabaseService.swift */; };
@@ -62,6 +65,9 @@
 		B42E1F2B2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		B42E1F2D2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		B453506422629D6F00AC23AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
+		B46A6520226D2F6600B1ABAA /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = ../Services/AuthenticationService.swift; sourceTree = "<group>"; };
 		B47FABF32262739000B326B3 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Services/DatabaseService.swift; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 		7AA677131CFF765600B353FB /* Token */ = {
 			isa = PBXGroup;
 			children = (
+				B46A651F226D2F4200B1ABAA /* Model */,
+				B46A651E226D2F3400B1ABAA /* Views */,
 				B42B6A30226040BC00BD42E0 /* Info.plist */,
 				B4F561C72260631100257491 /* GoogleService-Info.plist */,
 				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
@@ -171,6 +179,22 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		B46A651E226D2F3400B1ABAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B46A6520226D2F6600B1ABAA /* Cells.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B46A651F226D2F4200B1ABAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B4EAE979226519FD00874980 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +210,7 @@
 				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
 				B418A6A82267AA5800C39444 /* WelcomeView.swift */,
 				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
+				B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -250,7 +275,7 @@
 				TargetAttributes = {
 					7AA677101CFF765500B353FB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = FF5U9PUXAT;
+						DevelopmentTeam = 8MA8343UA7;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -324,6 +349,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Token/Pods-Token-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -335,6 +361,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTAComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCam.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -354,6 +381,7 @@
 			files = (
 				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
+				B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
 				B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */,
@@ -361,6 +389,7 @@
 				B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
+				B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
 				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
 				B418A6B0226B138100C39444 /* PreviewViewController.swift in Sources */,
@@ -370,6 +399,7 @@
 				B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */,
 				B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */,
 				B4DD8FC122662E06001269DA /* FeedViewController.swift in Sources */,
+				B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */,
 				B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */,
 				B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */,
 			);
@@ -518,7 +548,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = FF5U9PUXAT;
+				DEVELOPMENT_TEAM = 8MA8343UA7;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -540,7 +570,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = FF5U9PUXAT;
+				DEVELOPMENT_TEAM = 8MA8343UA7;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
