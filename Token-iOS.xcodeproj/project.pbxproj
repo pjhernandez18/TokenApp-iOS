@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */; };
 		96A1F3CF22692F46006F463E /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F3CE22692F46006F463E /* MainApp.storyboard */; };
 		B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A69D2266B49500C39444 /* ProfileViewController.swift */; };
 		B418A6A22267893C00C39444 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B418A6A12267893C00C39444 /* Start.storyboard */; };
@@ -41,6 +42,7 @@
 		350DA84BAE5AC4950152F121 /* Pods_Token.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Token.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AC85BC218785DD00DB92D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7AA677111CFF765600B353FB /* Token.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Token.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
 		96A1F3CE22692F46006F463E /* MainApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		AE305C0B008EE39D6642D3F9 /* Pods-Token.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.debug.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE2E03196DB7E7C9A3AA632 /* Pods-Token.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Token.release.xcconfig"; path = "Target Support Files/Pods-Token/Pods-Token.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				B418A6A32267935200C39444 /* StartViewController.swift */,
 				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
 				B418A6A82267AA5800C39444 /* WelcomeView.swift */,
+				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -247,7 +250,7 @@
 				TargetAttributes = {
 					7AA677101CFF765500B353FB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8MA8343UA7;
+						DevelopmentTeam = FF5U9PUXAT;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -321,6 +324,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Token/Pods-Token-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
@@ -331,6 +335,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCam.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
@@ -347,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
@@ -512,7 +518,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8MA8343UA7;
+				DEVELOPMENT_TEAM = FF5U9PUXAT;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -534,7 +540,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8MA8343UA7;
+				DEVELOPMENT_TEAM = FF5U9PUXAT;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

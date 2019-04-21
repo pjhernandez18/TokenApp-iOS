@@ -88,86 +88,10 @@
                     <view key="view" contentMode="scaleToFill" id="UO1-I0-qq7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHC-qw-cLp" userLabel="PreviewView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDS-KH-Xn7">
-                                        <rect key="frame" x="4" y="663" width="77" height="69"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="69" id="FhN-cO-IZa"/>
-                                            <constraint firstAttribute="width" constant="77" id="ZdQ-QY-5ST"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                        <state key="normal" image="Feed Icon-2"/>
-                                        <connections>
-                                            <segue destination="Cov-4R-B2Q" kind="presentation" identifier="toFeedViewController" modalTransitionStyle="crossDissolve" id="MRJ-cy-a9U"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0M-oO-24w">
-                                        <rect key="frame" x="319.66666666666669" y="663" width="77" height="69"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="77" id="2ZL-hg-7X2"/>
-                                            <constraint firstAttribute="height" constant="69" id="5iy-Po-EJT"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Jar"/>
-                                        <connections>
-                                            <segue destination="S2Y-7x-LxG" kind="presentation" identifier="toProfileViewContrroller" modalTransitionStyle="crossDissolve" id="UJm-so-cz9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzp-47-Pup">
-                                        <rect key="frame" x="333" y="8" width="77" height="69"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="69" id="1Gc-7B-Kzz"/>
-                                            <constraint firstAttribute="width" constant="77" id="8kf-B1-Lch"/>
-                                        </constraints>
-                                        <state key="normal" image="cameraIcon"/>
-                                        <connections>
-                                            <action selector="changeCameraPressed:" destination="YuE-zn-TSa" eventType="touchUpInside" id="TKP-Dk-yH8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="DDS-KH-Xn7" secondAttribute="bottom" constant="4" id="0Pj-tZ-CFp"/>
-                                    <constraint firstItem="DDS-KH-Xn7" firstAttribute="leading" secondItem="LHC-qw-cLp" secondAttribute="leading" constant="4" id="B5L-cc-Sf4"/>
-                                    <constraint firstAttribute="bottom" secondItem="L0M-oO-24w" secondAttribute="bottom" constant="4" id="X3j-kp-NyQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="L0M-oO-24w" secondAttribute="trailing" constant="17.329999999999998" id="eXh-gB-Opn"/>
-                                    <constraint firstItem="Rzp-47-Pup" firstAttribute="top" secondItem="LHC-qw-cLp" secondAttribute="top" constant="8" id="qz3-sk-xmy"/>
-                                    <constraint firstItem="Rzp-47-Pup" firstAttribute="top" secondItem="LHC-qw-cLp" secondAttribute="top" constant="8" id="v05-dh-6ZY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rzp-47-Pup" secondAttribute="trailing" constant="4" id="xmd-mX-aho"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rzp-47-Pup" secondAttribute="trailing" constant="4" id="zzx-oX-PG7"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWB-2a-q3k">
-                                <rect key="frame" x="157" y="606" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Tv3-ii-Fiv"/>
-                                    <constraint firstAttribute="height" constant="100" id="sOk-Hw-0Vm"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="createSnapButton">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="recordButtonPressed:" destination="YuE-zn-TSa" eventType="touchUpInside" id="MQL-mB-pXG"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="LHC-qw-cLp" firstAttribute="leading" secondItem="WL9-sV-gSV" secondAttribute="leading" id="38a-Tl-tXO"/>
-                            <constraint firstItem="ZWB-2a-q3k" firstAttribute="centerX" secondItem="UO1-I0-qq7" secondAttribute="centerX" id="QPp-QX-u6e"/>
-                            <constraint firstItem="LHC-qw-cLp" firstAttribute="trailing" secondItem="WL9-sV-gSV" secondAttribute="trailing" id="fcD-WQ-bD8"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZWB-2a-q3k" secondAttribute="bottom" constant="30" id="l0p-Di-iqL"/>
-                            <constraint firstItem="LHC-qw-cLp" firstAttribute="top" secondItem="UO1-I0-qq7" secondAttribute="top" id="p8U-Oh-Alw"/>
-                            <constraint firstItem="LHC-qw-cLp" firstAttribute="bottom" secondItem="WL9-sV-gSV" secondAttribute="bottom" id="wYW-Js-skG"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WL9-sV-gSV"/>
                     </view>
                     <connections>
-                        <outlet property="captureButton" destination="ZWB-2a-q3k" id="Zn3-FJ-GDW"/>
-                        <outlet property="flipCameraButton" destination="Rzp-47-Pup" id="q8K-7R-XNa"/>
-                        <outlet property="previewView" destination="LHC-qw-cLp" id="BJv-tx-flj"/>
                         <segue destination="g02-2n-xWj" kind="presentation" identifier="ToLoginScreen" id="YMc-6c-TYS"/>
                         <segue destination="yPB-KM-7nL" kind="presentation" identifier="UsersVC" id="W2u-iu-KVa"/>
                         <segue destination="Cov-4R-B2Q" kind="presentation" identifier="goLeft" modalTransitionStyle="crossDissolve" id="7U1-XP-0G3"/>
@@ -363,19 +287,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Feed Icon-2" width="1201" height="1200"/>
-        <image name="Jar" width="864" height="864"/>
         <image name="LOGO ALL TEAL" width="5629" height="1766"/>
         <image name="barca_bunkers_view" width="1083" height="726"/>
-        <image name="cameraIcon" width="30" height="30"/>
-        <image name="createSnapButton" width="30" height="30"/>
         <image name="pj" width="155" height="163"/>
         <image name="sendSnapButton" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OPj-iJ-kmP"/>
-        <segue reference="UJm-so-cz9"/>
-        <segue reference="7U1-XP-0G3"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
