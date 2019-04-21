@@ -96,41 +96,11 @@
                         <segue destination="yPB-KM-7nL" kind="presentation" identifier="UsersVC" id="W2u-iu-KVa"/>
                         <segue destination="Cov-4R-B2Q" kind="presentation" identifier="goLeft" modalTransitionStyle="crossDissolve" id="7U1-XP-0G3"/>
                         <segue destination="S2Y-7x-LxG" kind="presentation" identifier="goRight" modalTransitionStyle="crossDissolve" id="Bjb-zR-xL0"/>
-                        <segue destination="gjb-0f-qC5" kind="presentation" identifier="toPreview" id="IvQ-GP-2Q9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agy-d9-ff5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="176.81159420289856" y="-887.77173913043487"/>
-        </scene>
-        <!--Preview View Controller-->
-        <scene sceneID="cPl-Zv-fye">
-            <objects>
-                <viewController id="gjb-0f-qC5" customClass="PreviewViewController" customModule="Token" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="M0v-tY-QhY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4GO-Ej-EQQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="4GO-Ej-EQQ" firstAttribute="trailing" secondItem="yY1-6U-vaB" secondAttribute="trailing" id="In3-Rg-uyW"/>
-                            <constraint firstItem="4GO-Ej-EQQ" firstAttribute="leading" secondItem="yY1-6U-vaB" secondAttribute="leading" id="J4i-g1-ekG"/>
-                            <constraint firstItem="4GO-Ej-EQQ" firstAttribute="bottom" secondItem="yY1-6U-vaB" secondAttribute="bottom" id="c1I-Hy-Mhv"/>
-                            <constraint firstItem="4GO-Ej-EQQ" firstAttribute="top" secondItem="M0v-tY-QhY" secondAttribute="top" id="w7L-Sg-iP5"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="yY1-6U-vaB"/>
-                    </view>
-                    <connections>
-                        <outlet property="ImageEdit" destination="4GO-Ej-EQQ" id="Ela-Wu-K5H"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cI0-7A-MeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="930.43478260869574" y="-11.413043478260871"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="qDV-Wf-4Vt">

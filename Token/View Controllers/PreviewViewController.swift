@@ -8,35 +8,21 @@
 
 import UIKit
 
-class PreviewViewController: UIViewController {
-    
-    @IBOutlet weak var ImageEdit: UIImageView!
-    
-     var capturedPhoto :UIImage!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ImageEdit.image = capturedPhoto
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        ImageEdit.image = capturedPhoto
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        ImageEdit.image = capturedPhoto
-    }
-    
-    
-    
-    
+enum PreviewMedia {
+	case image(UIImage)
+	case video(URL)
+}
 
+class PreviewViewController: UIViewController {
+	let media: PreviewMedia
+	
+	init(media: PreviewMedia) {
+		self.media = media
+		
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 }
