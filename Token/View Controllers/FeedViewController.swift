@@ -1,190 +1,311 @@
 //
-//  FeedViewController.swift
+//  Feed2ViewController.swift
 //  Token
 //
-//  Created by P. J. Hernandez on 4/16/19.
+//  Created by P. J. Hernandez on 4/22/19.
 //  Copyright © 2019 Apple. All rights reserved.
 //
 
 import UIKit
 import LBTAComponents
 
-class FeedViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
-        leftSwipe.direction = UISwipeGestureRecognizer.Direction.left
-        self.view.addGestureRecognizer(leftSwipe)
-        
-        collectionView?.backgroundColor = .white
-        // register cell class
-        collectionView?.register(TripCell.self, forCellWithReuseIdentifier: "cellId")
-        
-     }
-    
-    @objc func swipeAction(swipe:UISwipeGestureRecognizer)
-    {
-        performSegue(withIdentifier: "goRight", sender: self)
-    }
-    
-    
-    // returns the number of cells in the view controller
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    // dequeue a cell with a unique identifi
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let height = (view.frame.width - 16 - 16) * 9 / 16
-        return CGSize(width: view.frame.width , height: 300)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-}
-
-class TripCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pj")
-        imageView.layer.cornerRadius = 5
-        imageView.clipsToBounds = true
-        return imageView
+class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+{
+   
+    let headerView: UIView = {
+        let hv = UIView()
+        hv.backgroundColor = tokenBlue
+        hv.translatesAutoresizingMaskIntoConstraints = false
+        return hv
     }()
-    
-    let nameLabel: UILabel = {
+    let headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "PJ Hernandez"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.text = "Feed"
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
-    let usernameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "@pjgoesonvacation"
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.init(r: 130, g: 130, b: 130)
-        return label
-    }()
-    
-    let tripHighlights: UICollectionView = {
+    // collection view to hold token stories
+    let tokenFeed: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
         cv.backgroundColor = .clear
         return cv
     }()
-    let highlightsCellId = "highlightsCellId"
+    
+    let highlightsID = "highlightsID"
+    let storyArray = ["white", "white", "white", "white", "white"]
 
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        navigationItem.title = "Feed"
+//        navigationController?.navigationBar.isTranslucent = false
+//
+//        let titleLabel = UILabel(frame: CGRect(x: 0,y: 0,width: view.frame.width - 32, height: view.frame.height))
+//        titleLabel.text = "Feed"
+//        titleLabel.textColor = .black
+//        titleLabel.font = UIFont.systemFont(ofSize: 20)
+//        navigationItem.titleView = titleLabel
+//        view.backgroundColor = .white
+        view.addSubview(headerView)
+        view.addSubview(tokenFeed)
+        view.backgroundColor = .white
+        setupHeader()
+        setupViews()
+    }
+    
+    func setupHeader(){
+        headerView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 60)
+        headerView.addSubview(headerLabel)
+        headerLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 20).isActive = true
+        headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
+        headerLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 1/5).isActive = true
+        headerLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, constant: 20).isActive = true
+    }
     func setupViews() {
-        tripHighlights.delegate = self
-        tripHighlights.dataSource = self
+        tokenFeed.delegate = self
+        tokenFeed.dataSource = self
         
-        tripHighlights.register(HighlightsCell.self, forCellWithReuseIdentifier: highlightsCellId)
-        //  addSubview(feedtripImageView)
-        addSubview(profileImageView)
-        addSubview(nameLabel)
-        addSubview(usernameLabel)
-        addSubview(tripHighlights)
-//        addSubview(separatorView)
-//        addSubview(userProfileImageView)
-//        addSubview(tripLabel)
-//        addSubview(tripDates)
-        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
-        nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
-        usernameLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-        tripHighlights.anchor(profileImageView.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-//        //addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: feedtripImageView)
-//        addConstraintsWithFormat(format: "H:|-16-[v0(44)]", views: userProfileImageView)
-//        // vertiacal contraints
-//        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: feedtripImageView, userProfileImageView, separatorView)
-//        addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
-//
-//        //top constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripLabel, attribute: .top, relatedBy: .equal, toItem: feedtripImageView, attribute: .bottom, multiplier: 1, constant: 8))
-//        //left constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripLabel, attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
-//
-//        //right constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripLabel, attribute: .right, relatedBy: .equal, toItem: feedtripImageView , attribute: .right, multiplier: 1, constant: 0))
-//        //top constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
-//
-//        //top constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripDates, attribute: .top, relatedBy: .equal, toItem: tripLabel, attribute: .bottom, multiplier: 1, constant: 8))
-//        //left constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripDates, attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
-//
-//        //right constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripDates, attribute: .right, relatedBy: .equal, toItem: feedtripImageView , attribute: .right, multiplier: 1, constant: 0))
-//        //height constraints for title label
-//        addConstraint(NSLayoutConstraint(item: tripDates, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
-//
-    
+        tokenFeed.register(HighlightsCell.self, forCellWithReuseIdentifier: highlightsID)
+        
+        tokenFeed.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: view.frame.height)
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+        // add more later - this is just to test the highlights
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
+        // determine the number of items in each section later
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: highlightsCellId, for: indexPath) as! HighlightsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: highlightsID, for: indexPath) as! HighlightsCell
+        cell.images = storyArray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.frame.width / 3), height: 100)
+        return CGSize(width: view.frame.width, height: 300)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    }
     
+    }
+   
 }
 
-class HighlightsCell: UICollectionViewCell {
+class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    override init(frame: CGRect){
+    var images: [String]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 30
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .blue
+        return cv
+    }()
+    
+    let cellId = "cellId"
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .blue
+        setup()
+    }
+    
+    func setup() {
+        addSubview(collectionView)
+        collectionView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! IconsCell
+        if let imageName = images?[indexPath.item] {
+            // iterate though images here
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: frame.height - 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private class IconsCell: UICollectionViewCell {
+        
+        let imageView: UIImageView = {
+            let iv = UIImageView()
+            iv.contentMode = .scaleAspectFill
+            iv.clipsToBounds = true
+            iv.layer.cornerRadius = 15
+            iv.backgroundColor = .white
+            return iv
+        }()
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            setup()
+        }
+        
+        func setup() {
+            setCellShadow()
+            addSubview(imageView)
+            imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+    }
+    
 }
 
-//extension UIView {
-//    func addConstraintsWithFormat(format: String, views: UIView...) {
-//        var viewsDictionary = [String: UIView]()
-//        for(index, view) in views.enumerated() {
-//            let key = "v\(index)"
-//            view.translatesAutoresizingMaskIntoConstraints = false
-//            viewsDictionary[key] = view
-//        }
-//          addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
+
+
+//class HighlightsCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+//
+//    let collectionView: UICollectionView = {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.minimumLineSpacing = 30
+//        layout.scrollDirection = .horizontal
+//        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+//        cv.translatesAutoresizingMaskIntoConstraints = false
+//        cv.backgroundColor = .white
+//        return cv
+//    }()
+//
+//    let cellId = "cellId"
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        backgroundColor = .blue
+//        setup()
 //    }
+//
+//    func setup() {
+//        addSubview(collectionView)
+//        collectionView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: frame.width, heightConstant: frame.height)
+//
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+//    }
+//
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+//}
 
-
+extension UIView {
+    
+    func setCellShadow() {
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 1.0
+        self.layer.masksToBounds = false
+        self.clipsToBounds = false
+        self.layer.cornerRadius = 15
+    }
+    
+    func setAnchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?,
+                   bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,
+                   paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat,
+                   paddingRight: CGFloat, width: CGFloat = 0, height: CGFloat = 0) {
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top {
+            self.topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+        }
+        
+        if let left = left {
+            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        
+        if let bottom = bottom {
+            self.bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
+        }
+        
+        if let right = right {
+            self.rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+        }
+        
+        if width != 0 {
+            self.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        
+        if height != 0 {
+            self.heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+    }
+    
+    var safeTopAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.topAnchor
+        }
+        return topAnchor
+    }
+    
+    var safeLeftAnchor: NSLayoutXAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.leftAnchor
+        }
+        return leftAnchor
+    }
+    
+    var safeBottomAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.bottomAnchor
+        }
+        return bottomAnchor
+    }
+    
+    var safeRightAnchor: NSLayoutXAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.rightAnchor
+        }
+        return rightAnchor
+    }
+    
+}

@@ -29,12 +29,13 @@
 		B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */; };
 		B46A652A226D660E00B1ABAA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6529226D660E00B1ABAA /* FeedCell.swift */; };
 		B46A652C226D7AFF00B1ABAA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */; };
+		B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D6844226E37E200FB5FF8 /* FeedViewController.swift */; };
 		B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABEF22613E7900B326B3 /* LoginViewController.swift */; };
 		B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF122614A6F00B326B3 /* AuthenticationService.swift */; };
 		B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF32262739000B326B3 /* DatabaseService.swift */; };
 		B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF52262961800B326B3 /* UsersViewController.swift */; };
 		B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF72262971100B326B3 /* CustomizedUserCell.swift */; };
-		B4DD8FC122662E06001269DA /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC022662E06001269DA /* FeedViewController.swift */; };
+		B4DD8FC122662E06001269DA /* OldFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC022662E06001269DA /* OldFeedViewController.swift */; };
 		B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */; };
 		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
 		B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4F561C72260631100257491 /* GoogleService-Info.plist */; };
@@ -74,13 +75,14 @@
 		B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		B46A6529226D660E00B1ABAA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		B46D6844226E37E200FB5FF8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = ../Services/AuthenticationService.swift; sourceTree = "<group>"; };
 		B47FABF32262739000B326B3 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Services/DatabaseService.swift; sourceTree = "<group>"; };
 		B47FABF52262961800B326B3 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		B47FABF72262971100B326B3 /* CustomizedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedUserCell.swift; sourceTree = "<group>"; };
 		B4CB977E22603F6100DC4917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Token-iOS/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
-		B4DD8FC022662E06001269DA /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B4DD8FC022662E06001269DA /* OldFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldFeedViewController.swift; sourceTree = "<group>"; };
 		B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTripsViewController.swift; sourceTree = "<group>"; };
 		B4F561C72260631100257491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4F561CD2261347400257491 /* CustomizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTextField.swift; sourceTree = "<group>"; };
@@ -221,13 +223,14 @@
 				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
 				96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */,
 				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
-				B4DD8FC022662E06001269DA /* FeedViewController.swift */,
+				B4DD8FC022662E06001269DA /* OldFeedViewController.swift */,
 				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */,
 				B418A69D2266B49500C39444 /* ProfileViewController.swift */,
 				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
 				B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */,
 				96E40E19226D251700706919 /* Constants.swift */,
+				B46D6844226E37E200FB5FF8 /* FeedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */,
 				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
 				B46A652A226D660E00B1ABAA /* FeedCell.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
@@ -418,7 +422,7 @@
 				B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */,
 				B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */,
 				B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */,
-				B4DD8FC122662E06001269DA /* FeedViewController.swift in Sources */,
+				B4DD8FC122662E06001269DA /* OldFeedViewController.swift in Sources */,
 				B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */,
 				B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */,
 				B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */,

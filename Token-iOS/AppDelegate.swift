@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.makeKeyAndVisible()
 //        window?.rootViewController = UINavigationController(rootViewController: FeedViewController())
-        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        
-//        let mainVC = StartViewController()
-//        window?.rootViewController = mainVC
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        let mainVC = FeedViewController()
+        window?.rootViewController = mainVC
         
         //let layout = UICollectionViewFlowLayout()
-        //window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
+        //window?.rootViewController = UINavigationController(rootViewController: Feed2ViewController (collectionViewLayout: layout))
+        
+        //UINavigationBar.appearance().barTintColor = tokenBlue
 
         AuthenticationService.instance.loginToApp(email: "test@usc.edu", password: "test123", onCompletion: { (errorMessage, data) in
             guard errorMessage == nil else{
