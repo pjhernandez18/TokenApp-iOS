@@ -16,23 +16,10 @@
                     <view key="view" contentMode="scaleToFill" id="mVk-JL-jXu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpm-13-WGR" customClass="WelcomeView" customModule="Token" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="lpm-13-WGR" firstAttribute="leading" secondItem="VBT-EW-7N7" secondAttribute="leading" id="4K0-wQ-Bxn"/>
-                            <constraint firstItem="lpm-13-WGR" firstAttribute="bottom" secondItem="VBT-EW-7N7" secondAttribute="bottom" id="C81-6Y-Rls"/>
-                            <constraint firstItem="lpm-13-WGR" firstAttribute="trailing" secondItem="VBT-EW-7N7" secondAttribute="trailing" id="LeQ-Az-N34"/>
-                            <constraint firstItem="lpm-13-WGR" firstAttribute="top" secondItem="mVk-JL-jXu" secondAttribute="top" id="gMg-Me-cKN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VBT-EW-7N7"/>
                     </view>
                     <connections>
-                        <outlet property="welcomeView" destination="lpm-13-WGR" id="kdR-d2-bPx"/>
                         <segue destination="apr-dy-AOC" kind="presentation" identifier="tocreateTrip" modalTransitionStyle="crossDissolve" id="Oda-V2-lmA"/>
                     </connections>
                 </viewController>

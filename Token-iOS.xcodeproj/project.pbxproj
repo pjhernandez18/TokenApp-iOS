@@ -15,7 +15,6 @@
 		B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A69D2266B49500C39444 /* ProfileViewController.swift */; };
 		B418A6A22267893C00C39444 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B418A6A12267893C00C39444 /* Start.storyboard */; };
 		B418A6A42267935200C39444 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A32267935200C39444 /* StartViewController.swift */; };
-		B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6A82267AA5800C39444 /* WelcomeView.swift */; };
 		B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */; };
 		B418A6B0226B138100C39444 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */; };
 		B41C42C42266685400E2EEE6 /* MediaTrips.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */; };
@@ -28,6 +27,8 @@
 		B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */; };
 		B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6520226D2F6600B1ABAA /* Cells.swift */; };
 		B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */; };
+		B46A652A226D660E00B1ABAA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6529226D660E00B1ABAA /* FeedCell.swift */; };
+		B46A652C226D7AFF00B1ABAA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */; };
 		B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABEF22613E7900B326B3 /* LoginViewController.swift */; };
 		B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF122614A6F00B326B3 /* AuthenticationService.swift */; };
 		B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF32262739000B326B3 /* DatabaseService.swift */; };
@@ -56,7 +57,6 @@
 		B418A69D2266B49500C39444 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B418A6A12267893C00C39444 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		B418A6A32267935200C39444 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		B418A6A82267AA5800C39444 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
 		B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaTrips.xcassets; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		B46A6520226D2F6600B1ABAA /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
+		B46A6529226D660E00B1ABAA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = ../Services/AuthenticationService.swift; sourceTree = "<group>"; };
 		B47FABF32262739000B326B3 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Services/DatabaseService.swift; sourceTree = "<group>"; };
@@ -155,19 +157,18 @@
 		7AA677131CFF765600B353FB /* Token */ = {
 			isa = PBXGroup;
 			children = (
-				B46A651F226D2F4200B1ABAA /* Model */,
-				B46A651E226D2F3400B1ABAA /* Views */,
 				B42B6A30226040BC00BD42E0 /* Info.plist */,
 				B4F561C72260631100257491 /* GoogleService-Info.plist */,
+				B46A651F226D2F4200B1ABAA /* Model */,
+				B46A651E226D2F3400B1ABAA /* Views */,
 				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
 				B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */,
+				B46A6526226D5B0600B1ABAA /* Apple's Docs */,
 				B4EAE979226519FD00874980 /* View Controllers */,
 				B4EAE97A22651A5A00874980 /* Services */,
 				B4EAE97B22651AA100874980 /* Customized Fields */,
 				B42B6A34226040BC00BD42E0 /* AppDelegate.swift */,
 				B4EAE97D22651B2C00874980 /* Token Objects */,
-				B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */,
-				B42B6A31226040BC00BD42E0 /* PreviewView.swift */,
 			);
 			path = Token;
 			sourceTree = "<group>";
@@ -187,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				B46A6520226D2F6600B1ABAA /* Cells.swift */,
+				B46A6529226D660E00B1ABAA /* FeedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,22 +201,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B4EAE979226519FD00874980 /* View Controllers */ = {
+		B46A6526226D5B0600B1ABAA /* Apple's Docs */ = {
 			isa = PBXGroup;
 			children = (
 				B42B6A35226040BC00BD42E0 /* CameraViewController.swift */,
+				B42B6A2E226040BC00BD42E0 /* PhotoCaptureDelegate.swift */,
+				B42B6A31226040BC00BD42E0 /* PreviewView.swift */,
+			);
+			path = "Apple's Docs";
+			sourceTree = "<group>";
+		};
+		B4EAE979226519FD00874980 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B418A6A32267935200C39444 /* StartViewController.swift */,
+				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
+				B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
 				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
 				96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */,
-				B47FABF52262961800B326B3 /* UsersViewController.swift */,
-				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
+				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
 				B4DD8FC022662E06001269DA /* FeedViewController.swift */,
+				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */,
 				B418A69D2266B49500C39444 /* ProfileViewController.swift */,
-				B418A6A32267935200C39444 /* StartViewController.swift */,
-				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
-				B418A6A82267AA5800C39444 /* WelcomeView.swift */,
-				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
+				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
 				B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */,
 				96E40E19226D251700706919 /* Constants.swift */,
 			);
@@ -386,13 +397,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
+				B46A652A226D660E00B1ABAA /* FeedCell.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
 				B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
 				B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */,
+				B46A652C226D7AFF00B1ABAA /* WelcomeView.swift in Sources */,
 				B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */,
-				B418A6A92267AA5800C39444 /* WelcomeView.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
 				96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
@@ -553,7 +565,6 @@
 			baseConfigurationReference = AE305C0B008EE39D6642D3F9 /* Pods-Token.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8MA8343UA7;
@@ -575,7 +586,6 @@
 			baseConfigurationReference = AEE2E03196DB7E7C9A3AA632 /* Pods-Token.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8MA8343UA7;

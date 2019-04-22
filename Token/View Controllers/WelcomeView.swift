@@ -11,5 +11,4 @@ import paper_onboarding
 
 class WelcomeView: PaperOnboarding {
 
-
 }

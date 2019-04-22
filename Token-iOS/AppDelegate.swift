@@ -12,7 +12,6 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-   
     func applicationDidFinishLaunching(_ application: UIApplication) {
         FirebaseApp.configure()
         print("app started")
@@ -23,11 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.makeKeyAndVisible()
+//        
+//        let mainVC = StartViewController()
+//        window?.rootViewController = mainVC
         
-//        let layout = UICollectionViewFlowLayout()
-//        window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
-//        window?.rootViewController = UINavigationController(rootViewController: HomeDataSourceController())
-        
+        //let layout = UICollectionViewFlowLayout()
+        //window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
+
         AuthenticationService.instance.loginToApp(email: "test@usc.edu", password: "test123", onCompletion: { (errorMessage, data) in
             guard errorMessage == nil else{
                 let alert = UIAlertController(title: "Error Authentication", message: errorMessage, preferredStyle: .alert)
@@ -37,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print("test user authenticated")
         })
+        
         
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.makeKeyAndVisible()
