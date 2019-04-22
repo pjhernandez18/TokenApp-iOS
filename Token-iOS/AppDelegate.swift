@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.makeKeyAndVisible()
 //        window?.rootViewController = UINavigationController(rootViewController: FeedViewController())
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
         
 //        let layout = UICollectionViewFlowLayout()
 //        window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
-        window?.rootViewController = UINavigationController(rootViewController: HomeDataSourceController())
+//        window?.rootViewController = UINavigationController(rootViewController: HomeDataSourceController())
         
         AuthenticationService.instance.loginToApp(email: "test@usc.edu", password: "test123", onCompletion: { (errorMessage, data) in
             guard errorMessage == nil else{

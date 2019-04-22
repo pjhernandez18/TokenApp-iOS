@@ -217,7 +217,6 @@
 				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
 				B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */,
 				96E40E19226D251700706919 /* Constants.swift */,
-
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
