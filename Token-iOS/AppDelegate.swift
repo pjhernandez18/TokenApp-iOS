@@ -28,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let layout = UICollectionViewFlowLayout()
         //window?.rootViewController = UINavigationController(rootViewController: Feed2ViewController (collectionViewLayout: layout))
         
-        //UINavigationBar.appearance().barTintColor = tokenBlue
-
+        // Authenticate test user so that Firebase stuff works
         AuthenticationService.instance.loginToApp(email: "test@usc.edu", password: "test123", onCompletion: { (errorMessage, data) in
             guard errorMessage == nil else{
                 let alert = UIAlertController(title: "Error Authentication", message: errorMessage, preferredStyle: .alert)
@@ -39,14 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print("test user authenticated")
         })
-        
-        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        let layout = UICollectionViewFlowLayout()
-//        window?.rootViewController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: layout))
-//       
-        // let db = Firestore.firestore()
     }
 }
 

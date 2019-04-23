@@ -39,7 +39,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }()
     
     let highlightsID = "highlightsID"
-    let storyArray = ["white", "white", "white", "white", "white"]
+    let usersID = "usersID"
+    let storyArray = ["Story1", "Story2", "Story3", "Story4", "Story5", "Story6", "Story7"]
 	
 	func canPage() -> Bool {
 		return true
@@ -48,15 +49,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title = "Feed"
-//        navigationController?.navigationBar.isTranslucent = false
-//
-//        let titleLabel = UILabel(frame: CGRect(x: 0,y: 0,width: view.frame.width - 32, height: view.frame.height))
-//        titleLabel.text = "Feed"
-//        titleLabel.textColor = .black
-//        titleLabel.font = UIFont.systemFont(ofSize: 20)
-//        navigationItem.titleView = titleLabel
-//        view.backgroundColor = .white
         view.addSubview(headerView)
         view.addSubview(tokenFeed)
         view.backgroundColor = .white
@@ -77,31 +69,43 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         tokenFeed.dataSource = self
         
         tokenFeed.register(HighlightsCell.self, forCellWithReuseIdentifier: highlightsID)
+        tokenFeed.register(UsersCell.self, forCellWithReuseIdentifier: usersID)
         
         tokenFeed.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: view.frame.height)
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-        // add more later - this is just to test the highlights
+        return 3
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
-        // determine the number of items in each section later
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 1 || indexPath.section == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: usersID, for: indexPath) as! UsersCell
+            // Add hardcoded info here
+            return cell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: highlightsID, for: indexPath) as! HighlightsCell
-        cell.images = storyArray
+        cell.stories = storyArray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        
+        if indexPath.section == 1 || indexPath.section == 2 {
+            return CGSize(width: view.frame.width, height: 500)
+        }
+    
+        return CGSize(width: view.frame.width, height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        if section == 1 || section == 2 {
+            return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        }
+        return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
     
     }
    
@@ -109,7 +113,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var images: [String]? {
+    var stories: [String]? {
         didSet {
             collectionView.reloadData()
         }
@@ -120,7 +124,7 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         layout.minimumLineSpacing = 30
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .blue
+        cv.backgroundColor = tokenBlue
         return cv
     }()
     
@@ -138,18 +142,19 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(StoryCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsHorizontalScrollIndicator = false
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! IconsCell
-        if let imageName = images?[indexPath.item] {
-            // iterate though images here
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StoryCell
+        if let story = stories?[indexPath.item] {
+            cell.imageView.image = UIImage(named: story)
+
         }
         return cell
     }
@@ -166,7 +171,16 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         fatalError("init(coder:) has not been implemented")
     }
     
-    private class IconsCell: UICollectionViewCell {
+    private class StoryCell: UICollectionViewCell {
+        
+//        let profileImageView: UIImageView = {
+//            let imageView = UIImageView()
+//            imageView.contentMode = .scaleAspectFill
+//            imageView.layer.cornerRadius = 5
+//            imageView.clipsToBounds = true
+//            //imageView.backgroundColor = .gray
+//            return imageView
+//        }()
         
         let imageView: UIImageView = {
             let iv = UIImageView()
@@ -184,8 +198,10 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         
         func setup() {
             setCellShadow()
+            //addSubview(profileImageView)
             addSubview(imageView)
             imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+//            profileImageView.setAnchor(top: imageView.topAnchor, left: imageView.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0)
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -196,49 +212,68 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
     
 }
 
+class UsersCell: UICollectionViewCell{
+  
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .green
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        //imageView.image = UIImage(named: "pj")
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .gray
+        return imageView
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "PJ Hernandez"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.backgroundColor = .blue
+        return label
+    }()
+    
+    let timestampLabel: UILabel = {
+        let label = UILabel()
+        // label.text = "@pjgoesonvacation"
+       // label.font = UIFonft.systemFont(ofSize: 14)
+       // label.textColor = UIColor.init(r: 130, g: 130, b: 130)
+        label.backgroundColor = .red
+        return label
+    }()
+    
+    let travelContent: UIImageView = {
+        let imageView = UIImageView()
+        //imageView.image = UIImage(named: "pj")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .white
+        return imageView
+    }()
+    
+    func setupViews() {
+        addSubview(profileImageView)
+        addSubview(nameLabel)
+        addSubview(timestampLabel)
+        addSubview(travelContent)
+        
+        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
+        nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
+        timestampLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
+        travelContent.anchor(profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 10, leftConstant: 2, bottomConstant: 0, rightConstant: 2, widthConstant: 0, heightConstant: 300)
 
+    }
 
-//class HighlightsCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//
-//    let collectionView: UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.minimumLineSpacing = 30
-//        layout.scrollDirection = .horizontal
-//        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        cv.translatesAutoresizingMaskIntoConstraints = false
-//        cv.backgroundColor = .white
-//        return cv
-//    }()
-//
-//    let cellId = "cellId"
-//
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        backgroundColor = .blue
-//        setup()
-//    }
-//
-//    func setup() {
-//        addSubview(collectionView)
-//        collectionView.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: frame.width, heightConstant: frame.height)
-//
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-//    }
-//
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//}
+}
+
 
 extension UIView {
     

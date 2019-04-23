@@ -29,8 +29,6 @@
 		B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */; };
 		B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6520226D2F6600B1ABAA /* Cells.swift */; };
 		B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */; };
-		B46A652A226D660E00B1ABAA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6529226D660E00B1ABAA /* FeedCell.swift */; };
-		B46A652C226D7AFF00B1ABAA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */; };
 		B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D6844226E37E200FB5FF8 /* FeedViewController.swift */; };
 		B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABEF22613E7900B326B3 /* LoginViewController.swift */; };
 		B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF122614A6F00B326B3 /* AuthenticationService.swift */; };
@@ -77,8 +75,6 @@
 		B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		B46A6520226D2F6600B1ABAA /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
-		B46A6529226D660E00B1ABAA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B46D6844226E37E200FB5FF8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = ../Services/AuthenticationService.swift; sourceTree = "<group>"; };
@@ -194,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				B46A6520226D2F6600B1ABAA /* Cells.swift */,
-				B46A6529226D660E00B1ABAA /* FeedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,7 +217,6 @@
 			children = (
 				B418A6A32267935200C39444 /* StartViewController.swift */,
 				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
-				B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
 				9651FF2B226EAB3F00118523 /* PreviewViewController.swift */,
 				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
@@ -407,14 +401,12 @@
 			files = (
 				B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */,
 				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
-				B46A652A226D660E00B1ABAA /* FeedCell.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
 				B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
 				9651FF2C226EAB3F00118523 /* PreviewViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
 				B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */,
-				B46A652C226D7AFF00B1ABAA /* WelcomeView.swift in Sources */,
 				B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
 				96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */,
