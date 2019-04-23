@@ -9,7 +9,7 @@
 import UIKit
 import LBTAComponents
 
-class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, PageableViewController
 {
    
     let headerView: UIView = {
@@ -40,6 +40,10 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let highlightsID = "highlightsID"
     let storyArray = ["white", "white", "white", "white", "white"]
+	
+	func canPage() -> Bool {
+		return true
+	}
 
     
     override func viewDidLoad() {

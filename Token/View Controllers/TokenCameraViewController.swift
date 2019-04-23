@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseStorage
 import SwiftyCam
 
-class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
+class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControllerDelegate, PageableViewController {
 	
 	let feedButton = UIButton(frame: .zero)
 	let captureButton = SwiftyRecordButton(frame: .zero)
@@ -21,6 +21,8 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 		videoGravity = .resizeAspectFill
 		
 		cameraDelegate = self
+		
+		swipeToZoom = false
 		
 		// bottom bar buttons
 		
@@ -40,6 +42,8 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 		
 		super.viewDidLoad()
 		
+		panGesture?.isEnabled = false
+		
 		view.setNeedsUpdateConstraints()
 	}
 	
@@ -49,6 +53,10 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 	
 	func goToProfile() {
 		
+	}
+	
+	func canPage() -> Bool {
+		return true
 	}
 	
 	override func updateViewConstraints() {
