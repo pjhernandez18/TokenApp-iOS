@@ -186,6 +186,7 @@
 		B46A651E226D2F3400B1ABAA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
 				B46A6520226D2F6600B1ABAA /* Cells.swift */,
 				B48644CE226F04E600235E96 /* HighlightsCell.swift */,
 				B48644D0226F051300235E96 /* UsersCell.swift */,
@@ -212,7 +213,6 @@
 				9651FF2B226EAB3F00118523 /* PreviewViewController.swift */,
 				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
 				96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */,
-				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
 				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */,
 				B418A69D2266B49500C39444 /* ProfileViewController.swift */,
