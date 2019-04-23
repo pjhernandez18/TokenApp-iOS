@@ -24,17 +24,16 @@ class PreviewViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		previewView.backgroundColor = .tokenBlue
+		previewView.backgroundColor = .green
 		previewView.layer.cornerRadius = 14
 		previewView.layer.masksToBounds = true
 		previewView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(previewView)
 		
-		view.backgroundColor = .red
+		view.backgroundColor = .tokenBlue
 		
 		// bottom
 		
-		bottomView.backgroundColor = .red
 		bottomView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(bottomView)
 		
