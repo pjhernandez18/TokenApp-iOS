@@ -23,10 +23,19 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         label.text = "Feed"
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
+    let backtoCameraButton: UIButton = {
+        let button = UIButton()
+        //button.backgroundColor = .white
+        button.setImage(UIImage(named: "cameraIcon"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     // collection view to hold token stories
     let tokenFeed: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -40,9 +49,11 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let highlightsID = "highlightsID"
     let usersID = "usersID"
+    let profileStoryArray = ["Add", "jason", "jake", "jerry", "pj", "jake", "jerry"]
     let profileArray = ["pj", "jason", "jake", "jerry", "pj", "jake", "jerry"]
-    let storyArray = ["Story1", "Story2", "Story3", "Story4", "Story5", "Story6", "Story7"]
+    let storyArray = ["addtoToken", "Story2", "Story3", "Story4", "Story5", "Story6", "Story7"]
     let nameArray = ["PJ Hernandez", "Jason Silberman", "Jake Hooli", "Jerry Zhao", "PJ Hernandez", "Jake Hooli", "Jerry Zhao"]
+    let labelArray = ["Add to Token", "", "", "", "", "", ""]
     let timeStampArray = ["10 mins ago - in Barcelona, Spain",
                           "5 mins ago - in Hong Kong, Hong Kong",
                           "1 day ago - in London, United Kingdom",
@@ -65,12 +76,19 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func setupHeader(){
-        headerView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 60)
+        headerView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 80)
         headerView.addSubview(headerLabel)
+        headerView.addSubview(backtoCameraButton)
+        
         headerLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 20).isActive = true
-        headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
+        headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10).isActive = true
         headerLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 1/5).isActive = true
         headerLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, constant: 20).isActive = true
+        
+        backtoCameraButton.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: 20).isActive = true
+        backtoCameraButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10).isActive = true
+        backtoCameraButton.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 1/5).isActive = true
+        backtoCameraButton.heightAnchor.constraint(equalTo: headerView.heightAnchor, constant: 20).isActive = true
     }
     func setupViews() {
         tokenFeed.delegate = self
@@ -93,7 +111,9 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: highlightsID, for: indexPath) as! HighlightsCell
             cell.stories = storyArray
-            cell.profiles = profileArray
+            cell.profiles = profileStoryArray
+            // how do you index cells?
+            cell.labels = labelArray
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: usersID, for: indexPath) as! UsersCell

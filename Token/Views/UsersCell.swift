@@ -79,16 +79,62 @@ class UsersCell: UICollectionViewCell{
         return imageView
     }()
     
+    let interactionBar: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let likeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "like-icon"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let commentButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "comment-icon"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let jarButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "Jar"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     func setupViews() {
         addSubview(profileImageView)
         addSubview(nameLabel)
         addSubview(timestampLabel)
         addSubview(travelContent)
+        addSubview(interactionBar)
+        setupInteractionBar()
         
         profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 60)
         nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
         timestampLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         travelContent.anchor(profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        interactionBar.anchor(travelContent.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 50)
+        
+    }
+    
+    func setupInteractionBar() {
+        interactionBar.addSubview(likeButton)
+        interactionBar.addSubview(commentButton)
+        interactionBar.addSubview(jarButton)
+        
+         likeButton.anchor(interactionBar.topAnchor, left: interactionBar.leftAnchor, bottom: interactionBar.bottomAnchor, right: commentButton.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 30)
+         commentButton.anchor(interactionBar.topAnchor, left: likeButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: jarButton.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 30)
+         jarButton.anchor(interactionBar.topAnchor, left: commentButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: interactionBar.rightAnchor , topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 50)
         
     }
     

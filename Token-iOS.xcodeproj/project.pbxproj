@@ -27,7 +27,6 @@
 		B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A35226040BC00BD42E0 /* CameraViewController.swift */; };
 		B453506522629D6F00AC23AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B453506422629D6F00AC23AD /* User.swift */; };
 		B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6520226D2F6600B1ABAA /* Cells.swift */; };
-		B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */; };
 		B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D6844226E37E200FB5FF8 /* FeedViewController.swift */; };
 		B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABEF22613E7900B326B3 /* LoginViewController.swift */; };
 		B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF122614A6F00B326B3 /* AuthenticationService.swift */; };
@@ -73,7 +72,6 @@
 		B42E1F2D2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		B453506422629D6F00AC23AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B46A6520226D2F6600B1ABAA /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
-		B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		B46D6844226E37E200FB5FF8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B47FABEF22613E7900B326B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B47FABF122614A6F00B326B3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = ../Services/AuthenticationService.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				B42B6A30226040BC00BD42E0 /* Info.plist */,
 				B4F561C72260631100257491 /* GoogleService-Info.plist */,
-				B46A651F226D2F4200B1ABAA /* Model */,
 				B46A651E226D2F3400B1ABAA /* Views */,
 				B4CB977E22603F6100DC4917 /* Assets.xcassets */,
 				B41C42C32266685400E2EEE6 /* MediaTrips.xcassets */,
@@ -194,14 +191,6 @@
 				B48644D0226F051300235E96 /* UsersCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B46A651F226D2F4200B1ABAA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B46A6526226D5B0600B1ABAA /* Apple's Docs */ = {
@@ -403,7 +392,6 @@
 				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
 				B48644CF226F04E600235E96 /* HighlightsCell.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
-				B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
 				9651FF2C226EAB3F00118523 /* PreviewViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,

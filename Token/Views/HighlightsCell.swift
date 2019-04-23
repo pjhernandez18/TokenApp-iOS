@@ -19,9 +19,14 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
             collectionView.reloadData()
         }
     }
+    var labels: [String]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 30
+        layout.minimumLineSpacing = -30
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = tokenBlue
@@ -51,11 +56,15 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StoryCell
+       
         if let story = stories?[indexPath.item] {
             cell.imageView.image = UIImage(named: story)
         }
         if let profile = profiles?[indexPath.item] {
             cell.profileImageView.image = UIImage(named: profile)
+        }
+        if let label = labels?[indexPath.item] {
+            cell.storyLabel.text = label
         }
         return cell
     }
@@ -65,7 +74,7 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -77,9 +86,11 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         let profileImageView: UIImageView = {
             let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFill
-            imageView.layer.cornerRadius = 5
+            imageView.layer.borderWidth = 2
+            imageView.layer.masksToBounds = false
+            imageView.layer.borderColor = UIColor.tokenYellow.cgColor
+            imageView.layer.cornerRadius = 25
             imageView.clipsToBounds = true
-            
             return imageView
         }()
         
@@ -92,6 +103,14 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
             return iv
         }()
         
+        let storyLabel: UILabel = {
+            let label = UILabel()
+            //label.text = "Add to Token"
+            label.font = UIFont.boldSystemFont(ofSize: 15)
+            label.textColor = .white
+            return label
+        }()
+        
         override init(frame: CGRect) {
             super.init(frame: frame)
             setup()
@@ -100,9 +119,13 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
             setCellShadow()
             //addSubview(profileImageView)
             addSubview(imageView)
-            imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+            addSubview(storyLabel)
+            imageView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 230)
+//            imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
             imageView.addSubview(profileImageView)
             profileImageView.anchor(imageView.topAnchor, left: imageView.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
+            storyLabel.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 10, rightConstant: 0, widthConstant: imageView.frame.width, heightConstant: 20)
+            
         }
         
         required init?(coder aDecoder: NSCoder) {
