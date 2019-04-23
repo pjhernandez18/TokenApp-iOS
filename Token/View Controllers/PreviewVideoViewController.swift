@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 
 
-class PreviewVideoViewController: UIViewController {
+class PreviewVideoViewController: PreviewViewController {
 	let media: URL
 	
 	let player: AVPlayer
@@ -23,6 +23,9 @@ class PreviewVideoViewController: UIViewController {
 		self.playerController = AVPlayerViewController()
 		
 		super.init(nibName: nil, bundle: nil)
+		
+		ratio = 16/9
+		topPadded = false
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -35,7 +38,7 @@ class PreviewVideoViewController: UIViewController {
 		playerController.showsPlaybackControls = false
 		playerController.player = player
 		addChild(playerController)
-		view.addSubview(playerController.view)
+		previewView.addSubview(playerController.view)
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
 
@@ -67,11 +70,7 @@ class PreviewVideoViewController: UIViewController {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		playerController.view.frame = view.bounds
-	}
-	
-	@objc func cancel() {
-		dismiss(animated: true, completion: nil)
+		playerController.view.frame = previewView.bounds
 	}
 	
 	@objc func playerItemDidReachEnd() {

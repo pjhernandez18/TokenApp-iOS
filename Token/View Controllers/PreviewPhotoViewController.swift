@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreviewPhotoViewController: UIViewController {
+class PreviewPhotoViewController: PreviewViewController {
 	let media: UIImage
 	
 	let imageView: UIImageView
@@ -27,13 +27,13 @@ class PreviewPhotoViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		imageView.contentMode = .scaleAspectFit
-		view.addSubview(imageView)
+		imageView.contentMode = .scaleAspectFill
+		previewView.addSubview(imageView)
 	}
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		imageView.frame = view.bounds
+		imageView.frame = previewView.bounds
 	}
 }

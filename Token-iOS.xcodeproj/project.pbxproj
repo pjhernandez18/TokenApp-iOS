@@ -10,6 +10,7 @@
 		38CFD926A1F61BAB7E9E7F63 /* Pods_Token.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DA84BAE5AC4950152F121 /* Pods_Token.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */; };
 		9651FF2A226EA0AB00118523 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651FF29226EA0AB00118523 /* PageViewController.swift */; };
+		9651FF2C226EAB3F00118523 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651FF2B226EAB3F00118523 /* PreviewViewController.swift */; };
 		96A1F3CF22692F46006F463E /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F3CE22692F46006F463E /* MainApp.storyboard */; };
 		96E40E1A226D251700706919 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E40E19226D251700706919 /* Constants.swift */; };
 		96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */; };
@@ -52,6 +53,7 @@
 		7AA677111CFF765600B353FB /* Token.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Token.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
 		9651FF29226EA0AB00118523 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		9651FF2B226EAB3F00118523 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		96A1F3CE22692F46006F463E /* MainApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		96E40E19226D251700706919 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVideoViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				B418A6AA2267B8D800C39444 /* CreateTripViewController.swift */,
 				B46A652B226D7AFE00B1ABAA /* WelcomeView.swift */,
 				B42B6A32226040BC00BD42E0 /* TokenCameraViewController.swift */,
+				9651FF2B226EAB3F00118523 /* PreviewViewController.swift */,
 				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
 				96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */,
 				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
@@ -408,6 +411,7 @@
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
 				B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
+				9651FF2C226EAB3F00118523 /* PreviewViewController.swift in Sources */,
 				B47FABF022613E7900B326B3 /* LoginViewController.swift in Sources */,
 				B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */,
 				B46A652C226D7AFF00B1ABAA /* WelcomeView.swift in Sources */,
