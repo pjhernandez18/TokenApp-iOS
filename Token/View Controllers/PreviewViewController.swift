@@ -15,7 +15,6 @@ class PreviewViewController: UIViewController {
 	let bottomView = UIView(frame: .zero)
 	let cancel = UIButton(frame: .zero)
 	let tripLabel = UILabel(frame: .zero)
-	let locationLabel = UILabel(frame: .zero)
 	let addButton = UIButton(frame: .zero)
 	
 	var ratio: CGFloat = 4/3
@@ -25,12 +24,12 @@ class PreviewViewController: UIViewController {
 		super.viewDidLoad()
 		
 		previewView.backgroundColor = .green
-		previewView.layer.cornerRadius = 14
+		previewView.layer.cornerRadius = 16
 		previewView.layer.masksToBounds = true
 		previewView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(previewView)
 		
-		view.backgroundColor = .tokenBlue
+		view.backgroundColor = .black
 		
 		// bottom
 		
@@ -41,21 +40,23 @@ class PreviewViewController: UIViewController {
 		cancel.translatesAutoresizingMaskIntoConstraints = false
 		cancel.backgroundColor = .tokenYellow
 		cancel.addTarget(self, action: #selector(close), for: .touchUpInside)
+		cancel.layer.cornerRadius = 6
+		cancel.contentEdgeInsets = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
 		bottomView.addSubview(cancel)
 		
 		tripLabel.text = "Spain"
+		tripLabel.font = UIFont.systemFont(ofSize: 19)
+		tripLabel.textColor = .white
 		tripLabel.textAlignment = .center
 		tripLabel.translatesAutoresizingMaskIntoConstraints = false
 		bottomView.addSubview(tripLabel)
 		
-		locationLabel.text = "USC Campus"
-		locationLabel.textAlignment = .center
-		locationLabel.translatesAutoresizingMaskIntoConstraints = false
-		bottomView.addSubview(locationLabel)
-		
 		addButton.setTitle("Add to Trip", for: .normal)
 		addButton.translatesAutoresizingMaskIntoConstraints = false
-		addButton.backgroundColor = .purple
+		addButton.backgroundColor = .tokenBlue
+		addButton.layer.cornerRadius = 8
+		addButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+		addButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
 		bottomView.addSubview(addButton)
 		
 		view.setNeedsUpdateConstraints()
@@ -80,11 +81,8 @@ class PreviewViewController: UIViewController {
 			cancel.leftAnchor.constraint(equalTo: bottomView.layoutMarginsGuide.leftAnchor),
 			cancel.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 12),
 			
-			tripLabel.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 12),
+			tripLabel.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 16),
 			tripLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor),
-			
-			locationLabel.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor),
-			locationLabel.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor),
 			
 			addButton.bottomAnchor.constraint(equalTo: bottomView.layoutMarginsGuide.bottomAnchor),
 			addButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor),
