@@ -67,7 +67,7 @@ class UserCell: DatasourceCell {
         label.text = "PJ Hernandez"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
-    }()
+    }() 
     
     let usernameLabel: UILabel = {
         let label = UILabel()

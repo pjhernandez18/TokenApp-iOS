@@ -40,13 +40,21 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let highlightsID = "highlightsID"
     let usersID = "usersID"
+    let profileArray = ["pj", "jason", "jake", "jerry", "pj", "jake", "jerry"]
     let storyArray = ["Story1", "Story2", "Story3", "Story4", "Story5", "Story6", "Story7"]
-	
+    let nameArray = ["PJ Hernandez", "Jason Silberman", "Jake Hooli", "Jerry Zhao", "PJ Hernandez", "Jake Hooli", "Jerry Zhao"]
+    let timeStampArray = ["10 mins ago - in Barcelona, Spain",
+                          "5 mins ago - in Hong Kong, Hong Kong",
+                          "1 day ago - in London, United Kingdom",
+                          "3 days ago - in Los Angeles, California",
+                          "3 days ago - in Lisbon, Portugal",
+                          "5 days ago - in Lake Arrowhead, California",
+                          "1 week ago - in Santa Monica, California"]
+    let usersContentArray = ["barcelona", "hongkong", "london", "losangeles", "portugal", "lakearrowhead", "santamonica"]
+ 
 	func canPage() -> Bool {
 		return true
 	}
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(headerView)
@@ -74,7 +82,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         tokenFeed.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: view.frame.height)
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 8
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,43 +90,49 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 1 || indexPath.section == 2 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: usersID, for: indexPath) as! UsersCell
-            // Add hardcoded info here
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: highlightsID, for: indexPath) as! HighlightsCell
+            cell.stories = storyArray
+            cell.profiles = profileArray
             return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: highlightsID, for: indexPath) as! HighlightsCell
-        cell.stories = storyArray
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: usersID, for: indexPath) as! UsersCell
+        cell.profiles = profileArray[indexPath.section - 1]
+        cell.names = nameArray[indexPath.section - 1]
+        cell.timestamp = timeStampArray[indexPath.section - 1]
+        cell.picture = usersContentArray[indexPath.section - 1]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if indexPath.section == 1 || indexPath.section == 2 {
-            return CGSize(width: view.frame.width, height: 500)
+        if indexPath.section == 0 {
+            return CGSize(width: view.frame.width, height: 250)
         }
     
-        return CGSize(width: view.frame.width, height: 250)
+        return CGSize(width: view.frame.width, height: 500)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if section == 1 || section == 2 {
-            return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        if section == 0 {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         }
-        return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
-    
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
    
 }
 
 class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     var stories: [String]? {
         didSet {
             collectionView.reloadData()
         }
     }
-    
+    var profiles: [String]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 30
@@ -141,7 +155,6 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.register(StoryCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsHorizontalScrollIndicator = false
     }
@@ -154,7 +167,9 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! StoryCell
         if let story = stories?[indexPath.item] {
             cell.imageView.image = UIImage(named: story)
-
+        }
+        if let profile = profiles?[indexPath.item] {
+            cell.profileImageView.image = UIImage(named: profile)
         }
         return cell
     }
@@ -173,21 +188,21 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
     
     private class StoryCell: UICollectionViewCell {
         
-//        let profileImageView: UIImageView = {
-//            let imageView = UIImageView()
-//            imageView.contentMode = .scaleAspectFill
-//            imageView.layer.cornerRadius = 5
-//            imageView.clipsToBounds = true
-//            //imageView.backgroundColor = .gray
-//            return imageView
-//        }()
-        
+        let profileImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFill
+            imageView.layer.cornerRadius = 5
+            imageView.clipsToBounds = true
+            
+            return imageView
+        }()
+    
         let imageView: UIImageView = {
             let iv = UIImageView()
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
             iv.layer.cornerRadius = 15
-            iv.backgroundColor = .white
+            //iv.alpha = 0.7
             return iv
         }()
         
@@ -195,15 +210,15 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
             super.init(frame: frame)
             setup()
         }
-        
         func setup() {
             setCellShadow()
             //addSubview(profileImageView)
             addSubview(imageView)
             imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-//            profileImageView.setAnchor(top: imageView.topAnchor, left: imageView.leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 0)
+            imageView.addSubview(profileImageView)
+            profileImageView.anchor(imageView.topAnchor, left: imageView.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
         }
-        
+
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
@@ -213,10 +228,39 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
 }
 
 class UsersCell: UICollectionViewCell{
+    
+    var profiles: String? {
+        didSet {
+            if let imageName = profiles {
+                profileImageView.image = UIImage(named: imageName)
+            }
+        }
+    }
+    var names: String? {
+        didSet {
+            if let name = names {
+                nameLabel.text = name
+            }
+        }
+    }
+    var timestamp: String? {
+        didSet {
+            if let ts = timestamp {
+                timestampLabel.text = ts
+            }
+        }
+    }
+    var picture: String? {
+        didSet {
+            if let p = picture {
+                travelContent.image = UIImage(named: p)
+            }
+        }
+    }
   
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        backgroundColor = .tokenBlue
         setupViews()
     }
     
@@ -226,28 +270,24 @@ class UsersCell: UICollectionViewCell{
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        //imageView.image = UIImage(named: "pj")
-        imageView.layer.cornerRadius = 5
+        //imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .gray
+        imageView.backgroundColor = .clear
         return imageView
     }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "PJ Hernandez"
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.backgroundColor = .blue
+        label.textColor = .white
         return label
     }()
     
     let timestampLabel: UILabel = {
         let label = UILabel()
-        // label.text = "@pjgoesonvacation"
-       // label.font = UIFonft.systemFont(ofSize: 14)
-       // label.textColor = UIColor.init(r: 130, g: 130, b: 130)
-        label.backgroundColor = .red
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .white
         return label
     }()
     
@@ -265,16 +305,14 @@ class UsersCell: UICollectionViewCell{
         addSubview(timestampLabel)
         addSubview(travelContent)
         
-        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
-        nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
+        profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 60)
+        nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
         timestampLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         travelContent.anchor(profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 10, leftConstant: 2, bottomConstant: 0, rightConstant: 2, widthConstant: 0, heightConstant: 300)
 
     }
 
 }
-
-
 extension UIView {
     
     func setCellShadow() {
