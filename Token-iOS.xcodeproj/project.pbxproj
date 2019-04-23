@@ -26,7 +26,6 @@
 		B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A34226040BC00BD42E0 /* AppDelegate.swift */; };
 		B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6A35226040BC00BD42E0 /* CameraViewController.swift */; };
 		B453506522629D6F00AC23AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B453506422629D6F00AC23AD /* User.swift */; };
-		B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */; };
 		B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6520226D2F6600B1ABAA /* Cells.swift */; };
 		B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */; };
 		B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D6844226E37E200FB5FF8 /* FeedViewController.swift */; };
@@ -35,7 +34,8 @@
 		B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF32262739000B326B3 /* DatabaseService.swift */; };
 		B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF52262961800B326B3 /* UsersViewController.swift */; };
 		B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FABF72262971100B326B3 /* CustomizedUserCell.swift */; };
-		B4DD8FC122662E06001269DA /* OldFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC022662E06001269DA /* OldFeedViewController.swift */; };
+		B48644CF226F04E600235E96 /* HighlightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48644CE226F04E600235E96 /* HighlightsCell.swift */; };
+		B48644D1226F051300235E96 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48644D0226F051300235E96 /* UsersCell.swift */; };
 		B4DD8FC322662E76001269DA /* SelectTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */; };
 		B4F561C62260601300257491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42E1F2C2260533D00EDE85D /* Main.storyboard */; };
 		B4F561C82260631100257491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4F561C72260631100257491 /* GoogleService-Info.plist */; };
@@ -72,7 +72,6 @@
 		B42E1F2B2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		B42E1F2D2260533D00EDE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Token-iOS/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		B453506422629D6F00AC23AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		B46A6520226D2F6600B1ABAA /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		B46A6523226D2FB500B1ABAA /* HomeDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		B46D6844226E37E200FB5FF8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +80,9 @@
 		B47FABF32262739000B326B3 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Services/DatabaseService.swift; sourceTree = "<group>"; };
 		B47FABF52262961800B326B3 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		B47FABF72262971100B326B3 /* CustomizedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedUserCell.swift; sourceTree = "<group>"; };
+		B48644CE226F04E600235E96 /* HighlightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsCell.swift; sourceTree = "<group>"; };
+		B48644D0226F051300235E96 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		B4CB977E22603F6100DC4917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Token-iOS/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
-		B4DD8FC022662E06001269DA /* OldFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldFeedViewController.swift; sourceTree = "<group>"; };
 		B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTripsViewController.swift; sourceTree = "<group>"; };
 		B4F561C72260631100257491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4F561CD2261347400257491 /* CustomizedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTextField.swift; sourceTree = "<group>"; };
@@ -190,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				B46A6520226D2F6600B1ABAA /* Cells.swift */,
+				B48644CE226F04E600235E96 /* HighlightsCell.swift */,
+				B48644D0226F051300235E96 /* UsersCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,12 +224,10 @@
 				B418A6AF226B138100C39444 /* PreviewPhotoViewController.swift */,
 				96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */,
 				963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */,
-				B4DD8FC022662E06001269DA /* OldFeedViewController.swift */,
 				B47FABF52262961800B326B3 /* UsersViewController.swift */,
 				B4DD8FC222662E76001269DA /* SelectTripsViewController.swift */,
 				B418A69D2266B49500C39444 /* ProfileViewController.swift */,
 				B47FABEF22613E7900B326B3 /* LoginViewController.swift */,
-				B46A651B226D281400B1ABAA /* HomeDataSourceController.swift */,
 				96E40E19226D251700706919 /* Constants.swift */,
 				B46D6844226E37E200FB5FF8 /* FeedViewController.swift */,
 				9651FF29226EA0AB00118523 /* PageViewController.swift */,
@@ -401,6 +401,7 @@
 			files = (
 				B46D6845226E37E300FB5FF8 /* FeedViewController.swift in Sources */,
 				963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */,
+				B48644CF226F04E600235E96 /* HighlightsCell.swift in Sources */,
 				B47FABF42262739100B326B3 /* DatabaseService.swift in Sources */,
 				B46A6524226D2FB500B1ABAA /* HomeDatasource.swift in Sources */,
 				B418A6A42267935200C39444 /* StartViewController.swift in Sources */,
@@ -411,9 +412,9 @@
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
 				96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
-				B46A651C226D281500B1ABAA /* HomeDataSourceController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
 				9651FF2A226EA0AB00118523 /* PageViewController.swift in Sources */,
+				B48644D1226F051300235E96 /* UsersCell.swift in Sources */,
 				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
 				96E40E1A226D251700706919 /* Constants.swift in Sources */,
 				B418A6B0226B138100C39444 /* PreviewPhotoViewController.swift in Sources */,
@@ -422,7 +423,6 @@
 				B47FABF62262961900B326B3 /* UsersViewController.swift in Sources */,
 				B42B6A39226040BC00BD42E0 /* PreviewView.swift in Sources */,
 				B418A69E2266B49500C39444 /* ProfileViewController.swift in Sources */,
-				B4DD8FC122662E06001269DA /* OldFeedViewController.swift in Sources */,
 				B46A6521226D2F6600B1ABAA /* Cells.swift in Sources */,
 				B47FABF222614A6F00B326B3 /* AuthenticationService.swift in Sources */,
 				B418A6AB2267B8D800C39444 /* CreateTripViewController.swift in Sources */,
