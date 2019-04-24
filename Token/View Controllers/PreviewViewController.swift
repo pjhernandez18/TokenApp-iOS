@@ -20,6 +20,8 @@ class PreviewViewController: UIViewController {
 	var ratio: CGFloat = 4/3
 	var topPadded = true
 	
+	var profileViewController: ProfileViewController?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -57,6 +59,7 @@ class PreviewViewController: UIViewController {
 		addButton.layer.cornerRadius = 8
 		addButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
 		addButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 24, bottom: 8, right: 24)
+		addButton.addTarget(self, action: #selector(add), for: .touchUpInside)
 		bottomView.addSubview(addButton)
 		
 		view.setNeedsUpdateConstraints()
@@ -91,5 +94,9 @@ class PreviewViewController: UIViewController {
 	
 	@objc func close() {
 		dismiss(animated: true, completion: nil)
+	}
+	
+	@objc func add() {
+		print("cannot add")
 	}
 }

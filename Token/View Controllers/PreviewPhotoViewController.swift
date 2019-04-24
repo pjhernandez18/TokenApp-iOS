@@ -36,4 +36,9 @@ class PreviewPhotoViewController: PreviewViewController {
 		
 		imageView.frame = previewView.bounds
 	}
+	
+	override func add() {
+		profileViewController?.newImages.insert(media, at: 0)
+		close()
+	}
 }
