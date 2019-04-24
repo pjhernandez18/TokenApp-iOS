@@ -15,7 +15,7 @@ protocol PageableViewController {
 final class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 	let pages: [UIViewController]
 	
-	var cursor: Int = 0
+	var cursor: Int = 1
 	
 	init(pages: [UIViewController], transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey: Any]? = nil) {
 		self.pages = pages
@@ -23,6 +23,8 @@ final class PageViewController: UIPageViewController, UIPageViewControllerDataSo
 		
 		dataSource = self
 		delegate = self
+		
+		view.backgroundColor = .tokenBlue
 		
 		setViewControllers([pages[cursor]], direction: .forward, animated: false, completion: nil)
 	}
@@ -42,7 +44,6 @@ final class PageViewController: UIPageViewController, UIPageViewControllerDataSo
 	// MARK: Data Source
 	
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-		guard (pages[cursor] as! PageableViewController).canPage() else { return nil }
 		
 		let index = pages.index(of: viewController) ?? 0
 		let nextIndex = index - 1
@@ -53,7 +54,6 @@ final class PageViewController: UIPageViewController, UIPageViewControllerDataSo
 	}
 	
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-		guard (pages[cursor] as! PageableViewController).canPage() else { return nil }
 		
 		let index = pages.index(of: viewController) ?? 0
 		let nextIndex = index + 1

@@ -8,21 +8,29 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, PageableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
-        rightSwipe.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(rightSwipe)
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+//        rightSwipe.direction = UISwipeGestureRecognizer.Direction.right
+//        self.view.addGestureRecognizer(rightSwipe)
         // Do any additional setup after loading the view.
+		
+		navigationItem.title = "Your Profile"
+		navigationController?.navigationBar.barTintColor = .tokenBlue
+		navigationController?.navigationBar.tintColor = .white
+		navigationController?.navigationBar.barStyle = .black
     }
     
-    @objc func swipeAction(swipe:UISwipeGestureRecognizer)
-    {
+    @objc func swipeAction(swipe:UISwipeGestureRecognizer) {
         performSegue(withIdentifier: "goLeft", sender: self)
     }
+	
+	func canPage() -> Bool {
+		return true
+	}
 
     /*
     // MARK: - Navigation
