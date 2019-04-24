@@ -24,10 +24,13 @@ class TokenHeader: UICollectionReusableView {
 	
 	private func setupHierarchy() {
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textAlignment = .center
-		label.font = UIFont.boldSystemFont(ofSize: 15)
+//		label.textAlignment = .center
+		label.font = UIFont.systemFont(ofSize: 15)
+		label.textColor = .gray
 		label.numberOfLines = 0
 		addSubview(label)
+		
+		backgroundColor = .white
 		
 		
 		setNeedsUpdateConstraints()
@@ -37,7 +40,7 @@ class TokenHeader: UICollectionReusableView {
 		super.updateConstraints()
 		
 		NSLayoutConstraint.activate([
-			label.leadingAnchor.constraint(equalTo: leadingAnchor),
+			label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
 			label.trailingAnchor.constraint(equalTo: trailingAnchor),
 			label.topAnchor.constraint(equalTo: topAnchor),
 			label.bottomAnchor.constraint(equalTo: bottomAnchor)
