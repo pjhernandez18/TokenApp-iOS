@@ -8,38 +8,88 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, PageableViewController {
-
+class ProfileViewController: UICollectionViewController {
+	
+	let newImages: [[UIImage]] = []
+	
+	init() {
+		super.init(collectionViewLayout: UICollectionViewFlowLayout())
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
-//        rightSwipe.direction = UISwipeGestureRecognizer.Direction.right
-//        self.view.addGestureRecognizer(rightSwipe)
-        // Do any additional setup after loading the view.
+		
+		collectionView?.backgroundColor = .white
+		collectionView?.alwaysBounceVertical = true
+		
+		collectionView?.register(TokenHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TokenHeader")
+
 		
 		navigationItem.title = "Your Profile"
 		navigationController?.navigationBar.barTintColor = .tokenBlue
 		navigationController?.navigationBar.tintColor = .white
 		navigationController?.navigationBar.barStyle = .black
-    }
-    
-    @objc func swipeAction(swipe:UISwipeGestureRecognizer) {
-        performSegue(withIdentifier: "goLeft", sender: self)
+		
+		collectionView.register(TokenCell.self, forCellWithReuseIdentifier: "TokenCell")
     }
 	
-	func canPage() -> Bool {
-		return true
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
+				
+		let numberOfItems: CGFloat = 3
+		let spacing: CGFloat = 1
+		let paddedSpace = (numberOfItems + 1) * spacing
+		
+		flowLayout.minimumInteritemSpacing = spacing
+		flowLayout.minimumLineSpacing = spacing
+		
+		let demension: CGFloat = (view.bounds.width - paddedSpace) / numberOfItems
+		flowLayout.itemSize = CGSize(width: demension, height: demension)
+		
+		flowLayout.headerReferenceSize = CGSize(width: view.bounds.width, height: 40)
 	}
+	
+	override func numberOfSections(in collectionView: UICollectionView) -> Int {
+		return 3
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		if section == 0 {
+			return newImages.count
+		} else {
+			return 5
+		}
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TokenCell", for: indexPath) as! TokenCell
+		
+		cell.backgroundColor = .red
+		
+		return cell
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TokenHeader", for: indexPath) as! TokenHeader
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+		switch indexPath.section {
+		case 0:
+			header.label.text = "Today"
+		case 1:
+			header.label.text = "1 day ago"
+		case 2:
+			header.label.text = "2 days ago"
+		default:
+			break
+		}
+		
+		return header
+	}
 
 }
