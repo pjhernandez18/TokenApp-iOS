@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let feed = FeedViewController()
 		let camera = TokenCameraViewController()
-		let storyboard = UIStoryboard(name: "MainApp", bundle: nil)
-		let profile = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
+		let profile = UINavigationController(rootViewController: ProfileViewController())
         window?.rootViewController = PageViewController(pages: [feed, camera, profile], transitionStyle: .scroll, navigationOrientation: .horizontal)
         
         //let layout = UICollectionViewFlowLayout()

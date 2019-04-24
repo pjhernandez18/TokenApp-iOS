@@ -11,6 +11,8 @@
 		963B8FD6226C0CA100862B74 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */; };
 		9651FF2A226EA0AB00118523 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651FF29226EA0AB00118523 /* PageViewController.swift */; };
 		9651FF2C226EAB3F00118523 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651FF2B226EAB3F00118523 /* PreviewViewController.swift */; };
+		9658E5FF22702101008B2C08 /* TokenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658E5FE22702101008B2C08 /* TokenCell.swift */; };
+		9658E60122702E4B008B2C08 /* TokenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658E60022702E4B008B2C08 /* TokenHeader.swift */; };
 		96A1F3CF22692F46006F463E /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A1F3CE22692F46006F463E /* MainApp.storyboard */; };
 		96E40E1A226D251700706919 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E40E19226D251700706919 /* Constants.swift */; };
 		96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */; };
@@ -51,6 +53,8 @@
 		963B8FD5226C0CA100862B74 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
 		9651FF29226EA0AB00118523 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9651FF2B226EAB3F00118523 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		9658E5FE22702101008B2C08 /* TokenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCell.swift; sourceTree = "<group>"; };
+		9658E60022702E4B008B2C08 /* TokenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHeader.swift; sourceTree = "<group>"; };
 		96A1F3CE22692F46006F463E /* MainApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		96E40E19226D251700706919 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		96E40E1B226D2B4300706919 /* PreviewVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVideoViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				B46A6520226D2F6600B1ABAA /* Cells.swift */,
 				B48644CE226F04E600235E96 /* HighlightsCell.swift */,
 				B48644D0226F051300235E96 /* UsersCell.swift */,
+				9658E5FE22702101008B2C08 /* TokenCell.swift */,
+				9658E60022702E4B008B2C08 /* TokenHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,11 +404,13 @@
 				B47FABF82262971100B326B3 /* CustomizedUserCell.swift in Sources */,
 				B42B6A3C226040BC00BD42E0 /* AppDelegate.swift in Sources */,
 				B42B6A3D226040BC00BD42E0 /* CameraViewController.swift in Sources */,
+				9658E60122702E4B008B2C08 /* TokenHeader.swift in Sources */,
 				96E40E1C226D2B4300706919 /* PreviewVideoViewController.swift in Sources */,
 				B42B6A3A226040BC00BD42E0 /* TokenCameraViewController.swift in Sources */,
 				B42B6A36226040BC00BD42E0 /* PhotoCaptureDelegate.swift in Sources */,
 				9651FF2A226EA0AB00118523 /* PageViewController.swift in Sources */,
 				B48644D1226F051300235E96 /* UsersCell.swift in Sources */,
+				9658E5FF22702101008B2C08 /* TokenCell.swift in Sources */,
 				B4F561CE2261347400257491 /* CustomizedTextField.swift in Sources */,
 				96E40E1A226D251700706919 /* Constants.swift in Sources */,
 				B418A6B0226B138100C39444 /* PreviewPhotoViewController.swift in Sources */,
