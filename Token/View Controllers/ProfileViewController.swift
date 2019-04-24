@@ -15,9 +15,11 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 		}
 	}
 	
-	var defaultImages: [[String]] = [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
+	let defaultImages: [[String]] = [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
 	
 	weak var pageViewController: PageViewController?
+	
+	var assetSize: CGSize = .zero
 	
 	init() {
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -35,7 +37,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 		
 		collectionView?.register(TokenHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TokenHeader")
 		collectionView?.register(TokenFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "TokenFooter")
-		collectionView.register(TokenCell.self, forCellWithReuseIdentifier: "TokenCell")
+		collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCollectionViewCell")
 		
 		navigationItem.title = "Current Trip"
 		navigationController?.navigationBar.barTintColor = .tokenBlue
@@ -59,15 +61,20 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 		
 		let demension: CGFloat = (view.bounds.width - paddedSpace) / numberOfItems
 		flowLayout.itemSize = CGSize(width: demension, height: demension)
+		assetSize = flowLayout.itemSize
 		
 		flowLayout.headerReferenceSize = CGSize(width: view.bounds.width, height: 40)
 		flowLayout.sectionHeadersPinToVisibleBounds = true
-		
-		flowLayout.footerReferenceSize = CGSize(width: view.bounds.width, height: 40) // must set it to non-zero for it to call the delegate function
 	}
 	
 	@objc func goToCamera() {
 		pageViewController?.prev()
+	}
+	
+	@objc func endTrip() {
+		let token = TokenViewController(newImages: newImages, assetSize: assetSize)
+		
+		present(UINavigationController(rootViewController: token), animated: true, completion: nil)
 	}
 	
 	override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -83,7 +90,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TokenCell", for: indexPath) as! TokenCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
 		
 		cell.backgroundColor = .red
 		
@@ -118,13 +125,13 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 			let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TokenFooter", for: indexPath) as! TokenFooter
 			
 			footer.button.setTitle("End Trip!", for: .normal)
+			footer.button.addTarget(self, action: #selector(endTrip), for: .touchUpInside)
 			
 			return footer
 		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-		print("hi")
 		if section == 2 {
 			return CGSize(width: view.bounds.width, height: 120)
 		} else {

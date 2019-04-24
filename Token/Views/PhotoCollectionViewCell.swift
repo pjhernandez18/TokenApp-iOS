@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TokenCell: UICollectionViewCell {
+class PhotoCollectionViewCell: UICollectionViewCell {
 	let imageView = UIImageView()
 	var assetIdentifier: String?
 	
