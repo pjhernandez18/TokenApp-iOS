@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UICollectionViewController {
+class ProfileViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 	var newImages: [UIImage] = [] {
 		didSet {
 			collectionView.reloadData()
@@ -34,6 +34,8 @@ class ProfileViewController: UICollectionViewController {
 		collectionView?.alwaysBounceVertical = true
 		
 		collectionView?.register(TokenHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TokenHeader")
+		collectionView?.register(TokenFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "TokenFooter")
+		collectionView.register(TokenCell.self, forCellWithReuseIdentifier: "TokenCell")
 		
 		navigationItem.title = "Current Trip"
 		navigationController?.navigationBar.barTintColor = .tokenBlue
@@ -41,8 +43,6 @@ class ProfileViewController: UICollectionViewController {
 		navigationController?.navigationBar.barStyle = .black
 		
 		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cameraIcon"), style: .plain, target: self, action: #selector(goToCamera))
-		
-		collectionView.register(TokenCell.self, forCellWithReuseIdentifier: "TokenCell")
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +62,8 @@ class ProfileViewController: UICollectionViewController {
 		
 		flowLayout.headerReferenceSize = CGSize(width: view.bounds.width, height: 40)
 		flowLayout.sectionHeadersPinToVisibleBounds = true
+		
+		flowLayout.footerReferenceSize = CGSize(width: view.bounds.width, height: 40) // must set it to non-zero for it to call the delegate function
 	}
 	
 	@objc func goToCamera() {
@@ -87,7 +89,7 @@ class ProfileViewController: UICollectionViewController {
 		
 		cell.imageView.contentMode = .scaleAspectFill
 		
-		if (indexPath.section == 0) {
+		if indexPath.section == 0 {
 			cell.imageView.image = newImages[indexPath.row]
 		} else {
 			cell.imageView.image = UIImage(named: defaultImages[indexPath.section - 1][indexPath.row])
@@ -97,20 +99,37 @@ class ProfileViewController: UICollectionViewController {
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TokenHeader", for: indexPath) as! TokenHeader
-
-		switch indexPath.section {
-		case 0:
-			header.label.text = "Today"
-		case 1:
-			header.label.text = "1 day ago"
-		case 2:
-			header.label.text = "2 days ago (Camera Roll)"
-		default:
-			break
+		if kind == UICollectionView.elementKindSectionHeader {
+			let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TokenHeader", for: indexPath) as! TokenHeader
+			
+			switch indexPath.section {
+			case 0:
+				header.label.text = "Today"
+			case 1:
+				header.label.text = "1 day ago"
+			case 2:
+				header.label.text = "2 days ago (Camera Roll)"
+			default:
+				break
+			}
+			
+			return header
+		} else { // footer
+			let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TokenFooter", for: indexPath) as! TokenFooter
+			
+			footer.button.setTitle("End Trip!", for: .normal)
+			
+			return footer
 		}
-		
-		return header
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+		print("hi")
+		if section == 2 {
+			return CGSize(width: view.bounds.width, height: 120)
+		} else {
+			return .zero
+		}
 	}
 
 }

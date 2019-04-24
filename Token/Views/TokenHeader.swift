@@ -11,7 +11,6 @@ import UIKit
 class TokenHeader: UICollectionReusableView {
 	let label: UILabel = UILabel(frame: .zero)
 	
-	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
