@@ -68,6 +68,11 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
 	func canPage() -> Bool {
 		return true
 	}
+    
+//    func transitiontoCamera(Sender: UIButton!) {
+//       
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(headerView)
