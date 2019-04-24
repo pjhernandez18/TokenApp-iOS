@@ -17,6 +17,8 @@ class ProfileViewController: UICollectionViewController {
 	
 	var defaultImages: [[UIImage]] = []
 	
+	weak var pageViewController: PageViewController?
+	
 	init() {
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
 	}
@@ -38,6 +40,8 @@ class ProfileViewController: UICollectionViewController {
 		navigationController?.navigationBar.tintColor = .white
 		navigationController?.navigationBar.barStyle = .black
 		
+		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cameraIcon"), style: .plain, target: self, action: #selector(goToCamera))
+		
 		collectionView.register(TokenCell.self, forCellWithReuseIdentifier: "TokenCell")
     }
 	
@@ -57,6 +61,10 @@ class ProfileViewController: UICollectionViewController {
 		flowLayout.itemSize = CGSize(width: demension, height: demension)
 		
 		flowLayout.headerReferenceSize = CGSize(width: view.bounds.width, height: 40)
+	}
+	
+	@objc func goToCamera() {
+		pageViewController?.prev()
 	}
 	
 	override func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -17,7 +17,8 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 	let captureButton = SwiftyRecordButton(frame: .zero)
 	let profileButton = UIButton(frame: .zero)
 	
-	var profileViewController: ProfileViewController?
+	weak var profileViewController: ProfileViewController?
+	weak var pageViewController: PageViewController?
 	
 	override func viewDidLoad() {
 		videoGravity = .resizeAspectFill
@@ -30,6 +31,7 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 		
 		feedButton.setImage(UIImage(named: "Feed Icon-2"), for: .normal)
 		feedButton.translatesAutoresizingMaskIntoConstraints = false
+		feedButton.addTarget(self, action: #selector(goToFeed), for: .touchUpInside)
 		view.addSubview(feedButton)
 		
 		captureButton.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +40,7 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 		
 		profileButton.setImage(UIImage(named: "Jar Icon-1"), for: .normal)
 		profileButton.translatesAutoresizingMaskIntoConstraints = false
+		profileButton.addTarget(self, action: #selector(goToProfile), for: .touchUpInside)
 		view.addSubview(profileButton)
 		
 		// setup view hierarchy
@@ -49,12 +52,12 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 		view.setNeedsUpdateConstraints()
 	}
 	
-	func goToFeed() {
-		
+	@objc func goToFeed() {
+		pageViewController?.prev()
 	}
 	
-	func goToProfile() {
-		
+	@objc func goToProfile() {
+		pageViewController?.next()
 	}
 	
 	func canPage() -> Bool {
