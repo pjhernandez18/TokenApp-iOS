@@ -15,7 +15,9 @@ class ProfileViewController: UICollectionViewController {
 		}
 	}
 	
-	var defaultImages: [[UIImage]] = []
+	var defaultImages: [[String]] = [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
+	
+	weak var pageViewController: PageViewController?
 	
 	init() {
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -33,10 +35,12 @@ class ProfileViewController: UICollectionViewController {
 		
 		collectionView?.register(TokenHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TokenHeader")
 		
-		navigationItem.title = "Your Profile"
+		navigationItem.title = "Current Trip"
 		navigationController?.navigationBar.barTintColor = .tokenBlue
 		navigationController?.navigationBar.tintColor = .white
 		navigationController?.navigationBar.barStyle = .black
+		
+		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "cameraIcon"), style: .plain, target: self, action: #selector(goToCamera))
 		
 		collectionView.register(TokenCell.self, forCellWithReuseIdentifier: "TokenCell")
     }
@@ -57,6 +61,11 @@ class ProfileViewController: UICollectionViewController {
 		flowLayout.itemSize = CGSize(width: demension, height: demension)
 		
 		flowLayout.headerReferenceSize = CGSize(width: view.bounds.width, height: 40)
+		flowLayout.sectionHeadersPinToVisibleBounds = true
+	}
+	
+	@objc func goToCamera() {
+		pageViewController?.prev()
 	}
 	
 	override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -81,8 +90,7 @@ class ProfileViewController: UICollectionViewController {
 		if (indexPath.section == 0) {
 			cell.imageView.image = newImages[indexPath.row]
 		} else {
-//			cell.imageView.image = defaultImages[indexPath.section][indexPath.row]
-			cell.imageView.image = nil
+			cell.imageView.image = UIImage(named: defaultImages[indexPath.section - 1][indexPath.row])
 		}
 		
 		return cell
@@ -97,7 +105,7 @@ class ProfileViewController: UICollectionViewController {
 		case 1:
 			header.label.text = "1 day ago"
 		case 2:
-			header.label.text = "2 days ago"
+			header.label.text = "2 days ago (Camera Roll)"
 		default:
 			break
 		}

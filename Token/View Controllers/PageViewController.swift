@@ -41,6 +41,28 @@ final class PageViewController: UIPageViewController, UIPageViewControllerDataSo
 		return pages[cursor].supportedInterfaceOrientations
 	}
 	
+	// MARK: Actions
+	
+	func next() {
+		let nextCursor = cursor + 1
+		
+		guard nextCursor >= 0, nextCursor < pages.count else { return }
+		
+		cursor += 1
+		
+		setViewControllers([pages[cursor]], direction: .forward, animated: true, completion: nil)
+	}
+	
+	func prev() {
+		let nextCursor = cursor - 1
+		
+		guard nextCursor >= 0, nextCursor < pages.count else { return }
+		
+		cursor -= 1
+		
+		setViewControllers([pages[cursor]], direction: .reverse, animated: true, completion: nil)
+	}
+	
 	// MARK: Data Source
 	
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

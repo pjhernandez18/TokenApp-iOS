@@ -11,6 +11,8 @@ import LBTAComponents
 
 class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, PageableViewController
 {
+	
+	weak var pageViewController: PageViewController?
    
     let headerView: UIView = {
         let hv = UIView()
@@ -95,6 +97,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         backtoCameraButton.widthAnchor.constraint(equalTo: headerView.widthAnchor, multiplier: 1/5).isActive = true
         backtoCameraButton.heightAnchor.constraint(equalTo: headerView.heightAnchor, constant: 20).isActive = true
     }
+	
     func setupViews() {
         tokenFeed.delegate = self
         tokenFeed.dataSource = self
@@ -103,7 +106,14 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         tokenFeed.register(UsersCell.self, forCellWithReuseIdentifier: usersID)
         
         tokenFeed.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: view.frame.height)
+		
+		backtoCameraButton.addTarget(self, action: #selector(goToCamera), for: .touchUpInside)
     }
+	
+	@objc func goToCamera() {
+		pageViewController?.next()
+	}
+	
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 8
     }

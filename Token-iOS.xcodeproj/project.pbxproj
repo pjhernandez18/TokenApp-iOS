@@ -290,7 +290,7 @@
 				TargetAttributes = {
 					7AA677101CFF765500B353FB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8MA8343UA7;
+						DevelopmentTeam = FF5U9PUXAT;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -567,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8MA8343UA7;
+				DEVELOPMENT_TEAM = FF5U9PUXAT;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -588,7 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8MA8343UA7;
+				DEVELOPMENT_TEAM = FF5U9PUXAT;
 				INFOPLIST_FILE = "$(SRCROOT)/Token-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
