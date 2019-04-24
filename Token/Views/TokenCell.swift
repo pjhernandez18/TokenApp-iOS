@@ -31,6 +31,8 @@ class TokenCell: UICollectionViewCell {
 	func setupHierarchy() {
 		layer.borderColor = UIColor.blue.cgColor
 		
+		contentView.layer.masksToBounds = true
+		
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		contentView.addSubview(imageView)
 		

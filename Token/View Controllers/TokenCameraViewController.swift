@@ -17,6 +17,8 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 	let captureButton = SwiftyRecordButton(frame: .zero)
 	let profileButton = UIButton(frame: .zero)
 	
+	var profileViewController: ProfileViewController?
+	
 	override func viewDidLoad() {
 		videoGravity = .resizeAspectFill
 		
@@ -91,10 +93,14 @@ class TokenCameraViewController: SwiftyCamViewController, SwiftyCamViewControlle
 	}
 	
 	func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
-		present(PreviewPhotoViewController(media: photo), animated: true, completion: nil)
+		let vc = PreviewPhotoViewController(media: photo)
+		vc.profileViewController = profileViewController
+		present(vc, animated: true, completion: nil)
 	}
 	
 	func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
-		present(PreviewVideoViewController(media: url), animated: true, completion: nil)
+		let vc = PreviewVideoViewController(media: url)
+		vc.profileViewController = profileViewController
+		present(vc, animated: true, completion: nil)
 	}
 }

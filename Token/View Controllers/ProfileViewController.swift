@@ -9,8 +9,13 @@
 import UIKit
 
 class ProfileViewController: UICollectionViewController {
+	var newImages: [UIImage] = [] {
+		didSet {
+			collectionView.reloadData()
+		}
+	}
 	
-	let newImages: [[UIImage]] = []
+	var defaultImages: [[UIImage]] = []
 	
 	init() {
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -27,7 +32,6 @@ class ProfileViewController: UICollectionViewController {
 		collectionView?.alwaysBounceVertical = true
 		
 		collectionView?.register(TokenHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TokenHeader")
-
 		
 		navigationItem.title = "Your Profile"
 		navigationController?.navigationBar.barTintColor = .tokenBlue
@@ -71,6 +75,15 @@ class ProfileViewController: UICollectionViewController {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TokenCell", for: indexPath) as! TokenCell
 		
 		cell.backgroundColor = .red
+		
+		cell.imageView.contentMode = .scaleAspectFill
+		
+		if (indexPath.section == 0) {
+			cell.imageView.image = newImages[indexPath.row]
+		} else {
+//			cell.imageView.image = defaultImages[indexPath.section][indexPath.row]
+			cell.imageView.image = nil
+		}
 		
 		return cell
 	}
