@@ -88,7 +88,7 @@ class UsersCell: UICollectionViewCell{
     
     let likeButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "like-icon"), for: .normal)
+        button.setImage(UIImage(named: "Like"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +96,7 @@ class UsersCell: UICollectionViewCell{
     }()
     let commentButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "comment-icon"), for: .normal)
+        button.setImage(UIImage(named: "Comment"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +104,7 @@ class UsersCell: UICollectionViewCell{
     }()
     let jarButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "Jar"), for: .normal)
+        button.setImage(UIImage(named: "Jar White"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -132,9 +132,9 @@ class UsersCell: UICollectionViewCell{
         interactionBar.addSubview(commentButton)
         interactionBar.addSubview(jarButton)
         
-         likeButton.anchor(interactionBar.topAnchor, left: interactionBar.leftAnchor, bottom: interactionBar.bottomAnchor, right: commentButton.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 30)
-         commentButton.anchor(interactionBar.topAnchor, left: likeButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: jarButton.leftAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 30)
-         jarButton.anchor(interactionBar.topAnchor, left: commentButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: interactionBar.rightAnchor , topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 50)
+         likeButton.anchor(interactionBar.topAnchor, left: interactionBar.leftAnchor, bottom: interactionBar.bottomAnchor, right: commentButton.leftAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
+         commentButton.anchor(interactionBar.topAnchor, left: likeButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: jarButton.leftAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
+         jarButton.anchor(interactionBar.topAnchor, left: commentButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: interactionBar.rightAnchor , topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
         
     }
     
