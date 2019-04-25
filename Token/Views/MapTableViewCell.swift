@@ -42,10 +42,10 @@ final class MapTableViewCell: UITableViewCell {
 		super.updateConstraints()
 		
 		NSLayoutConstraint.activate([
-			map.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-			map.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-			map.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
-			map.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+			map.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+			map.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+			map.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+			map.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
 			
 			map.heightAnchor.constraint(greaterThanOrEqualToConstant: 250)
 		])

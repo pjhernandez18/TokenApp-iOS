@@ -30,6 +30,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		super.viewDidLoad()
 		
 		navigationItem.title = "yOuR ToKEN"
+		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
 		navigationController?.navigationBar.barTintColor = .tokenYellow
 		
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
@@ -38,18 +39,18 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: "PhotosTableViewCell")
 	}
 	
+	@objc func close() {
+		dismiss(animated: true, completion: nil)
+	}
+	
 	// MARK: Table View
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 3
+		return 5
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section < 2 {
-			return 1
-		} else {
-			return 3
-		}
+		return 1
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,9 +70,26 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 			cell.collectionView.dataSource = self
 			cell.collectionView.delegate = self
 			
-			cell.collectionView.tag = indexPath.row
+			cell.collectionView.tag = indexPath.section
 			
 			return cell
+		}
+	}
+	
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		switch section {
+		case 0:
+			return "Highlights"
+		case 1:
+			return "Your Places"
+		case 2:
+			return newImages.count != 0 ? "Today" : nil
+		case 3:
+			return "1 day ago"
+		case 4:
+			return "2 days ago"
+		default:
+			return nil
 		}
 	}
 	
@@ -79,7 +97,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		if indexPath.section < 2 {
 			return UITableView.automaticDimension
 		} else {
-			let imageCount = indexPath.row == 0 ? newImages.count : defaultImages[indexPath.row - 1].count
+			let imageCount = indexPath.section == 2 ? newImages.count : defaultImages[indexPath.section - 3].count
 			let rows: CGFloat = ceil(CGFloat(imageCount) / CGFloat(3))
 			return rows * assetSize.height + rows * 2
 		}
@@ -88,7 +106,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 	// MARK: Collection View
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		if collectionView.tag == 0 {
+		if collectionView.tag == 2 {
 			return newImages.count
 		} else {
 			return 5
@@ -102,10 +120,10 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		
 		cell.imageView.contentMode = .scaleAspectFill
 		
-		if collectionView.tag == 0 {
+		if collectionView.tag == 2 {
 			cell.imageView.image = newImages[indexPath.row]
 		} else {
-			cell.imageView.image = UIImage(named: defaultImages[collectionView.tag - 1][indexPath.row])
+			cell.imageView.image = UIImage(named: defaultImages[collectionView.tag - 3][indexPath.row])
 		}
 		
 		return cell
