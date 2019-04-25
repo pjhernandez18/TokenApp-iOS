@@ -64,20 +64,32 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		navigationItem.title = "Los Angeles"
-		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(close))
+		
 		navigationController?.navigationBar.barTintColor = .tokenYellow
+		navigationController?.navigationBar.tintColor = .tokenBlue
 		
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
 		tableView.register(RecommendationCell.self, forCellReuseIdentifier: "RecommendationCell")
 		tableView.register(MapTableViewCell.self, forCellReuseIdentifier: "MapTableViewCell")
 		tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: "PhotosTableViewCell")
 		
-		places.append((34.0407, -118.2468, "LA Live"))
-		places.append((34.0928, -118.3287, "Hollywood"))
-		places.append((33.9850, -118.4695, "Beverly Hills"))
-		places.append((34.0736, -118.4004, "Santa Monica"))
-		places.append((34.0224, -118.2851, "LavaLab"))
+		if style == .token {
+			navigationItem.title = "Los Angeles"
+			navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(close))
+			places.append((34.0407, -118.2468, "LA Live"))
+			places.append((34.0928, -118.3287, "Hollywood"))
+			places.append((33.9850, -118.4695, "Beverly Hills"))
+			places.append((34.0736, -118.4004, "Santa Monica"))
+			places.append((34.0224, -118.2851, "LavaLab"))
+		} else {
+			navigationItem.title = "Spain"
+			navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(close))
+			places.append((41.3851, 2.1734, "Barcelona"))
+			places.append((40.4168, -3.7038, "Madrid"))
+			places.append((38.7223, -9.1393, "Lisbon"))
+			places.append((39.4699, -0.3763, "Valencia"))
+			places.append((37.3891, -5.9845, "Seville"))
+		}
 	}
 	
 	@objc func close() {

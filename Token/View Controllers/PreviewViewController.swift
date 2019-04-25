@@ -46,7 +46,7 @@ class PreviewViewController: UIViewController {
 		cancel.contentEdgeInsets = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
 		bottomView.addSubview(cancel)
 		
-		tripLabel.text = "Spain"
+		tripLabel.text = "Los Angeles"
 		tripLabel.font = UIFont.systemFont(ofSize: 19)
 		tripLabel.textColor = .white
 		tripLabel.textAlignment = .center

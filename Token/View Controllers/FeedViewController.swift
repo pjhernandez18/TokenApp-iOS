@@ -114,6 +114,17 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
 		pageViewController?.next()
 	}
 	
+	@objc func viewToken() {
+		let numberOfItems: CGFloat = 3
+		let spacing: CGFloat = 1
+		let paddedSpace = (numberOfItems + 1) * spacing
+		let demension: CGFloat = (view.bounds.width - paddedSpace) / numberOfItems
+		
+		let token = TokenViewController(newImages: [], assetSize: CGSize(width: demension, height: demension), style: .feed)
+		
+		present(UINavigationController(rootViewController: token), animated: true, completion: nil)
+	}
+	
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 8
     }
@@ -136,6 +147,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.names = nameArray[indexPath.section - 1]
         cell.timestamp = timeStampArray[indexPath.section - 1]
         cell.picture = usersContentArray[indexPath.section - 1]
+		cell.viewTokenButton.addTarget(self, action: #selector(viewToken), for: .touchUpInside)
         return cell
     }
     
