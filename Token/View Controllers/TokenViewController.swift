@@ -7,6 +7,26 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
+
+class LocationAnnotation: NSObject, MKAnnotation {
+	var coordinate: CLLocationCoordinate2D {
+		return location.coordinate
+	}
+	
+	var title: String? {
+		return name
+	}
+	
+	let location: CLLocation
+	let name: String
+	
+	init(location: CLLocation, name: String) {
+		self.location = location
+		self.name = name
+	}
+}
 
 class TokenViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 	let newImages: [UIImage]
@@ -14,6 +34,8 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 	let defaultImages: [[String]] = [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
 	
 	let assetSize: CGSize
+	
+	var places: [(Double, Double, String)] = []
 	
 	init(newImages: [UIImage], assetSize: CGSize) {
 		self.newImages = newImages
@@ -29,7 +51,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		navigationItem.title = "yOuR ToKEN"
+		navigationItem.title = "Los Angeles"
 		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
 		navigationController?.navigationBar.barTintColor = .tokenYellow
 		
@@ -37,6 +59,12 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		tableView.register(RecommendationCell.self, forCellReuseIdentifier: "RecommendationCell")
 		tableView.register(MapTableViewCell.self, forCellReuseIdentifier: "MapTableViewCell")
 		tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: "PhotosTableViewCell")
+		
+		places.append((34.0407, -118.2468, "LA Live"))
+		places.append((34.0928, -118.3287, "Hollywood"))
+		places.append((33.9850, -118.4695, "Beverly Hills"))
+		places.append((34.0736, -118.4004, "Santa Monica"))
+		places.append((34.0224, -118.2851, "LavaLab"))
 	}
 	
 	@objc func close() {
@@ -60,6 +88,12 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 			return cell
 		} else if indexPath.section == 1 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell", for: indexPath) as! MapTableViewCell
+			
+			let annotations = places.map { (loc) -> LocationAnnotation in
+				return LocationAnnotation(location: CLLocation(latitude: loc.0, longitude: loc.1), name: loc.2)
+			}
+			
+			cell.map.showAnnotations(annotations, animated: true)
 			
 			return cell
 		} else {

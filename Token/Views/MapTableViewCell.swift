@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-final class MapTableViewCell: UITableViewCell {
+final class MapTableViewCell: UITableViewCell, MKMapViewDelegate {
 	let map = MKMapView(frame: .zero)
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,6 +30,8 @@ final class MapTableViewCell: UITableViewCell {
 	private func setup() {
 		backgroundColor = .clear
 		
+		map.delegate = self
+		
 		map.translatesAutoresizingMaskIntoConstraints = false
 		map.layer.cornerRadius = 4
 		map.layer.masksToBounds = true
@@ -49,5 +51,24 @@ final class MapTableViewCell: UITableViewCell {
 			
 			map.heightAnchor.constraint(greaterThanOrEqualToConstant: 250)
 		])
+	}
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		if (annotation is MKUserLocation) {
+			return nil
+		}
+		
+		let reuseId = "pin"
+		let view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+		
+		if let annotation = annotation as? LocationAnnotation {
+			if annotation.name == "LavaLab" {
+				view.markerTintColor = UIColor(hue:0.07, saturation:0.79, brightness:0.86, alpha:1.00)
+			} else {
+				view.markerTintColor = .tokenBlue
+			}
+		}
+		
+		return view
 	}
 }
