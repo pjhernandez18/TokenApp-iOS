@@ -15,7 +15,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 		}
 	}
 	
-	let defaultImages: [[String]] = [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
+	let defaultImages: [[String]] = [["token1", "token2", "token3", "token4", "token5"], ["token6", "token7", "token8", "token9", "token10"]]
 	
 	weak var pageViewController: PageViewController?
 	
@@ -72,7 +72,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 	}
 	
 	@objc func endTrip() {
-		let token = TokenViewController(newImages: newImages, assetSize: assetSize)
+		let token = TokenViewController(newImages: newImages, assetSize: assetSize, style: .token)
 		
 		present(UINavigationController(rootViewController: token), animated: true, completion: nil)
 	}
