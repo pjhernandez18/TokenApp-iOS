@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LBTAComponents
 
 class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var stories: [String]? {
@@ -99,7 +100,9 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
             iv.contentMode = .scaleAspectFill
             iv.clipsToBounds = true
             iv.layer.cornerRadius = 15
-            //iv.alpha = 0.7
+//            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(storyTapped(tapGestureRecognizer:)))
+//            iv.isUserInteractionEnabled = true
+//            iv.addGestureRecognizer(tapGestureRecognizer)
             return iv
         }()
         
@@ -115,13 +118,14 @@ class HighlightsCell: UICollectionViewCell, UICollectionViewDelegate, UICollecti
             super.init(frame: frame)
             setup()
         }
+        
         func setup() {
             setCellShadow()
             //addSubview(profileImageView)
             addSubview(imageView)
             addSubview(storyLabel)
             imageView.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 150, heightConstant: 230)
-//            imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
+            
             imageView.addSubview(profileImageView)
             profileImageView.anchor(imageView.topAnchor, left: imageView.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
             storyLabel.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 10, rightConstant: 0, widthConstant: imageView.frame.width, heightConstant: 20)

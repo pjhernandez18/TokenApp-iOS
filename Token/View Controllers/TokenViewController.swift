@@ -39,7 +39,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		if style == .token {
 			return [["token1", "token2", "token3", "token4", "token5"], ["token6", "token7", "token8", "token9", "token10"], ["token11", "token12", "token13", "token14", "token15"]]
 		} else {
-			return [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
+			return [["barcelona1", "barcelona2", "barcelona3", "barcelona4", "barcelona5"], ["barcelona6", "barcelona7", "barcelona8", "barcelona9", "barcelona10"]]
 		}
 	}
 	
@@ -82,13 +82,16 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 			places.append((34.0736, -118.4004, "Santa Monica"))
 			places.append((34.0224, -118.2851, "LavaLab"))
 		} else {
-			navigationItem.title = "Spain"
+			navigationItem.title = "PJ's Barcelona Token"
 			navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(close))
-			places.append((41.3851, 2.1734, "Barcelona"))
-			places.append((40.4168, -3.7038, "Madrid"))
-			places.append((38.7223, -9.1393, "Lisbon"))
-			places.append((39.4699, -0.3763, "Valencia"))
-			places.append((37.3891, -5.9845, "Seville"))
+			places.append((41.385063, 2.173404, "Barcelona"))
+			places.append((41.380775, 2.173661, "La Rambla"))
+			places.append((41.3817, 2.1716, "La Boqueria"))
+            places.append((41.4034789, 2.1744, "Sagrada Familia"))
+            places.append((41.41409935, 2.1524, "Park Guell"))
+            places.append((41.3806533, 2.1899, "La Barceloneta"))
+            places.append((41.3833947, 2.1769119, "Gothic Quarters"))
+		
 		}
 	}
 	
@@ -150,11 +153,11 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		case 2:
 			return newImages.count != 0 ? "Today" : nil
 		case 3:
-			return "1 day ago"
+			return "Day 1"
 		case 4:
-			return "2 days ago"
+			return "Day 2"
 		case 5:
-			return "3 days ago"
+			return "Day 3"
 		default:
 			return nil
 		}

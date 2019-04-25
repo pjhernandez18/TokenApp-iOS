@@ -124,7 +124,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
 		
 		present(UINavigationController(rootViewController: token), animated: true, completion: nil)
 	}
-	
+	 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 8
     }
