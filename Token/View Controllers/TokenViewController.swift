@@ -85,9 +85,13 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		if indexPath.section == 0 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendationCell", for: indexPath) as! RecommendationCell
 			
+			cell.selectionStyle = .none
+			
 			return cell
 		} else if indexPath.section == 1 {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell", for: indexPath) as! MapTableViewCell
+			
+			cell.selectionStyle = .none
 			
 			let annotations = places.map { (loc) -> LocationAnnotation in
 				return LocationAnnotation(location: CLLocation(latitude: loc.0, longitude: loc.1), name: loc.2)
@@ -98,6 +102,8 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 			return cell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosTableViewCell", for: indexPath) as! PhotosTableViewCell
+			
+			cell.selectionStyle = .none
 			
 			cell.assetSize = assetSize
 			
