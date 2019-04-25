@@ -28,18 +28,31 @@ class LocationAnnotation: NSObject, MKAnnotation {
 	}
 }
 
+enum Style {
+	case token, feed
+}
+
 class TokenViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 	let newImages: [UIImage]
 	
-	let defaultImages: [[String]] = [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
+	var defaultImages: [[String]] {
+		if style == .token {
+			return [["token1", "token2", "token3", "token4", "token5"], ["token6", "token7", "token8", "token9", "token10"], ["token11", "token12", "token13", "token14", "token15"]]
+		} else {
+			return [["grid1", "grid2", "grid3", "grid4", "grid5"], ["grid6", "grid7", "grid8", "grid9", "grid10"]]
+		}
+	}
 	
 	let assetSize: CGSize
 	
 	var places: [(Double, Double, String)] = []
 	
-	init(newImages: [UIImage], assetSize: CGSize) {
+	let style: Style
+	
+	init(newImages: [UIImage], assetSize: CGSize, style: Style) {
 		self.newImages = newImages
 		self.assetSize = assetSize
+		self.style = style
 		
 		super.init(style: .plain)
 	}
@@ -52,7 +65,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 		super.viewDidLoad()
 		
 		navigationItem.title = "Los Angeles"
-		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(close))
 		navigationController?.navigationBar.barTintColor = .tokenYellow
 		
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
@@ -74,7 +87,7 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 	// MARK: Table View
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 5
+		return 3 + defaultImages.count
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,6 +141,8 @@ class TokenViewController: UITableViewController, UICollectionViewDelegate, UICo
 			return "1 day ago"
 		case 4:
 			return "2 days ago"
+		case 5:
+			return "3 days ago"
 		default:
 			return nil
 		}
