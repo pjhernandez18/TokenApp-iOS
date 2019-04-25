@@ -113,9 +113,9 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 			case 0:
 				header.label.text = "Today"
 			case 1:
-				header.label.text = "1 day ago"
+				header.label.text = "Day 2"
 			case 2:
-				header.label.text = "2 days ago (Camera Roll)"
+				header.label.text = "Day 1"
 			default:
 				break
 			}

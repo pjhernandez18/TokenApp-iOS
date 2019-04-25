@@ -81,7 +81,7 @@ class UsersCell: UICollectionViewCell{
     
     let interactionBar: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -111,12 +111,28 @@ class UsersCell: UICollectionViewCell{
         return button
     }()
     
+    let viewTokenButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 5
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 1
+        button.setTitle("View Token", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.setImage(UIImage(named: "Logo2"), for: .normal)
+//        button.imageView?.contentMode = .scaleAspectFit
+//        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+        
+        return button
+    }()
+    
     func setupViews() {
         addSubview(profileImageView)
         addSubview(nameLabel)
         addSubview(timestampLabel)
         addSubview(travelContent)
         addSubview(interactionBar)
+        addSubview(viewTokenButton)
         setupInteractionBar()
         
         profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 60, heightConstant: 60)
@@ -124,7 +140,8 @@ class UsersCell: UICollectionViewCell{
         timestampLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 5, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
         travelContent.anchor(profileImageView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         interactionBar.anchor(travelContent.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 50)
-        
+        viewTokenButton.anchor(interactionBar.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topConstant: 10, leftConstant: 70,
+                               bottomConstant: 0, rightConstant: 70, widthConstant: self.frame.width / 3, heightConstant: 50)
     }
     
     func setupInteractionBar() {
@@ -132,9 +149,9 @@ class UsersCell: UICollectionViewCell{
         interactionBar.addSubview(commentButton)
         interactionBar.addSubview(jarButton)
         
-         likeButton.anchor(interactionBar.topAnchor, left: interactionBar.leftAnchor, bottom: interactionBar.bottomAnchor, right: commentButton.leftAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
+         likeButton.anchor(interactionBar.topAnchor, left: interactionBar.leftAnchor, bottom: interactionBar.bottomAnchor, right: commentButton.leftAnchor, topConstant: 10, leftConstant: 0, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
          commentButton.anchor(interactionBar.topAnchor, left: likeButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: jarButton.leftAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
-         jarButton.anchor(interactionBar.topAnchor, left: commentButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: interactionBar.rightAnchor , topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: (self.frame.width / 3), heightConstant: 30)
+         jarButton.anchor(interactionBar.topAnchor, left: commentButton.rightAnchor, bottom: interactionBar.bottomAnchor, right: interactionBar.rightAnchor , topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 0, widthConstant: (self.frame.width / 3), heightConstant: 30)
         
     }
     
